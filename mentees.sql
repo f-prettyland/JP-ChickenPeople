@@ -1,14 +1,14 @@
 DROP TABLE IF EXISTS `mentees`;
 
 CREATE TABLE `mentees` (
-  `menteeId` int() NOT NULL,
-  `menteeName` int(50) NOT NULL,
-  `city` varchar(50) NOT NULL,
-  `country` varchar(50) NOT NULL,
-  `product` varchar(50) NOT NULL,
-  `tag` varchar(50) NOT NULL,
-  `gmail` varchar(50) NOT NULL,
-  `phone` varchar(50) DEFAULT NULL,
-  `privacyBit` int(2) DEFAULT 0,
+  `menteeId` int,
+  `menteeName` int(50),
+  `city` varchar(50),
+  `country` varchar(50),
+  `product` varchar(50),
+  `tag` varchar(50),
+  `gmail` varchar(50),
+  `phone` varchar(50),
+  `privacyBit` int(2),
   PRIMARY KEY (`menteeId`),
 );
