@@ -21,6 +21,6 @@ CREATE TABLE `mentees` (
 DELETE FROM mentees;
 
 # load new records into it
-LOAD DATA LOCAL INFILE 'mentees.txt' INTO TABLE mentees;
+LOAD DATA LOCAL INFILE 'menteeinfo.txt' INTO TABLE mentees;
 
 
