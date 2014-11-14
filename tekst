@@ -1,5 +1,0 @@
-create database data;
-
-source mentees.sql;
-source load_mentees.sql;
-

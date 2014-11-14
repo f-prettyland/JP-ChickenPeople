@@ -1,7 +1,3 @@
-create database if not exists data;
-
-use data;
-
 DROP TABLE IF EXISTS `mentees`;
 
 CREATE TABLE `mentees` (
@@ -14,13 +10,5 @@ CREATE TABLE `mentees` (
   `gmail` varchar(50),
   `phone` varchar(50),
   `privacyBit` int(2),
-  PRIMARY KEY (`menteeId`)
+  PRIMARY KEY (`menteeId`),
 );
-
-# empty the table
-DELETE FROM mentees;
-
-# load new records into it
-LOAD DATA LOCAL INFILE 'menteeinfo.txt' INTO TABLE mentees;
-
-
