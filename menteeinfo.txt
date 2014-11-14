@@ -1,0 +1,5 @@
+0	Franceska Priest	Gibraltar	Gibraltar	honey butter		honey butter	fp@gmail.com	504532454	0 
+1	Vica Andrei		Nairobi		Kenya		see shells		shell		va@gmail.com	836777204	0
+2	Paula Czarh		Lusaka		Zambia		coconut oil		coconut		pc@gmail.com	920847221	0
+3	Ieva Gosu		Brazzaville	Kongo		papaya chutney		papaya		ig@gmail.com	777333629	0
+4	Andria Martin		Abidjan		Ivory Coast	roasted cocoa beans	cocoa		am@gmail.com	038554928	1
