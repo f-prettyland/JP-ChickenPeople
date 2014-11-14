@@ -10,5 +10,5 @@ CREATE TABLE `mentees` (
   `gmail` varchar(50),
   `phone` varchar(50),
   `privacyBit` int(2),
-  PRIMARY KEY (`menteeId`),
+  PRIMARY KEY (`menteeId`)
 );
