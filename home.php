@@ -66,7 +66,7 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
 
-  $result = mysql_query("SELECT menteeId, menteeName, city, country, picName from mentees")
+  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, picName from mentees")
       or die(mysql_error()); 
 
   while(($row = mysql_fetch_assoc($result)) != NULL) {
@@ -74,6 +74,7 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 $city = $row['city'];
 $country = $row['country'];
 $username = $row['menteeId'];
+$prod = $row['product'];
 $photo = $row['picName'];
 $name = $row['menteeName']
 ?>
@@ -100,7 +101,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"./mentee.php?id=" + web_location<?php echo $username ?> +"\"><img alt=\"140x140\" src= \"./photos/" + image<?php echo $username ?>+"\" class=\"img-rounded\" /></a> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
+    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"./mentee.php?id=" + web_location<?php echo $username ?> +"\"><img alt=\"140x140\" src= \"./photos/" + image<?php echo $username ?>+"\" class=\"img-rounded\" /></a> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a> - "+<?php echo $prod ?>+"</h3>"});
       }
     });
 <?php
