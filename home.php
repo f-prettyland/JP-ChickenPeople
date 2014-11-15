@@ -75,8 +75,8 @@ $city = $row['city'];
 $country = $row['country'];
 ?>
 
-var city_name = <?php echo $city ?>;
-var country_name = <?php echo $country ?>;
+var city_name = <?php echo $city; ?>;
+var country_name = <?php echo $country; ?>;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
@@ -134,8 +134,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
           <ul class="nav navbar-nav">
             <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-            <li class="active"><a href="./home.html">Home</a></li>
-            <li><a href="./login.html">Log In</a></li>
+            <li class="active"><a href="./home.php">Home</a></li>
+            <li><a href="./login.php">Log In</a></li>
             <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
