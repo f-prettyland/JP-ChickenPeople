@@ -82,36 +82,93 @@
 </ul>
 </br>
 
+<div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+      </div>
+      
 City:<br>
-<input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="40">
- <button type="button">Click Me!</button> 
+<input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
+ <button type="button" class="btn btn-sm btn-warning">Submit</button> 
 <br>
 Country:<br>
-<input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="40">
- <button type="button">Click Me!</button> 
+<input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
+ <button type="button" class="btn btn-sm btn-warning">Submit</button> 
 <br>
 Product:<br>
-<input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="40">
- <button type="button">Click Me!</button> 
+<input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
+ <button type="button" class="btn btn-sm btn-warning">Submit</button> 
 <br>
 Tag:<br>
-<input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="40">
- <button type="button">Click Me!</button> 
+<input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
+ <button type="button" class="btn btn-sm btn-warning">Submit</button> 
 <br>
 Gmail:<br>
-<input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="40">
- <button type="button">Click Me!</button> 
+<input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
+ <button type="button" class="btn btn-sm btn-warning">Submit</button> 
 <br>
 Phone Number:<br>
-<input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="40">
- <button type="button">Click Me!</button> 
+<input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
+ <button type="button" class="btn btn-sm btn-warning">Submit</button> 
 <br>
 Do you want your contact details to remain private?<br>
-<input type="checkbox" name="option3" value="Cheese"> Cheese<br> 
+<input type="checkbox" name="option3" value="Cheese"> Protext my data<br> 
 Story<br>
-<textarea rows="30" cols="200" name="story">
+<textarea rows="10" cols="100" name="story">
 <?php echo "\"".$row['story']."\""; ?></textarea>
- <button type="button">Click Me!</button> 
+ <button type="button" class="btn btn-sm btn-warning">Submit</button> 
 </div><!-- /.container -->
 
 
