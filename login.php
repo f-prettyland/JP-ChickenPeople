@@ -62,7 +62,6 @@
 
 
 <?php
-  echo "<p>Got somewhere</p>";
 if (!isset($_POST['submit'])){
 
    echo "<div class=\"container\">
@@ -77,11 +76,9 @@ if (!isset($_POST['submit'])){
           </label>
         </div>
         <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
-      </form>"
+      </form>";}
 
-        echo "<p>Got somewhere</p>";
-
-} else {
+      else {
 
   require_once("db_const.php");
 
