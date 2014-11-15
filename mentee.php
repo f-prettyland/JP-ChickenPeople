@@ -84,7 +84,7 @@
         <?php $stringPic =  "\"./photos/".$row['picName']; 
         $stringPic .= "\""; ?>
 			<img alt="140x140" src=  <?php echo $stringPic;?> class="img-rounded" />
-				<?php echo "Name: ".$row['menteeName']; ?>
+				<?php echo "".$row['menteeName']; ?>
 			</h3>
 		</div>
 		<div class="col-md-6 column">
