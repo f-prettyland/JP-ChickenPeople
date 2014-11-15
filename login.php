@@ -80,7 +80,7 @@ if (!isset($_POST['submit'])){
 
       else {
 
-      echo "<p> In submit! </p>";}
+      echo "<p> In submit! </p>";
 
   require_once("db_const.php");
 
