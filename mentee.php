@@ -81,8 +81,10 @@
 	<div class="row clearfix">
 		<div class="col-md-2 column">
 			<h3>
-        <?php $stringPic =  "\"./photos/".$row['picName']; ?>
-			<img alt="140x140" src=  <?php echo $stringPic . "\"";?> class="img-rounded" />
+        <?php $stringPic =  "\"./photos/".$row['picName']; 
+        $stringPic .= "\"" 
+        var_dump($stringPic)?>
+			<img alt="140x140" src=  <?php echo $stringPic;?> class="img-rounded" />
 				<?php echo "Name: ".$row['menteeName']; ?>
 			</h3>
 		</div>
