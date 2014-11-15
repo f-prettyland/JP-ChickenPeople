@@ -123,9 +123,6 @@
 </div>
 
 
-      </div>
-
-    </div>
 
     <script>
   		$(function () {
@@ -135,7 +132,7 @@
 
     <!-- /.container --></div>
     <!-- PROFILE STUFF ENDS HERE-->
-    </div>
+
   	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
   	<div role="tabpanel" class="tab-pane fade" id="messages">messages</div>
 
