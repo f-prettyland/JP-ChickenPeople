@@ -94,14 +94,11 @@ if (!isset($_POST["submit_b"])){
   $result = mysql_query("SELECT * from users where userId like '$username' and password like '$password'")
       or die(mysql_error()); 
   $result_array = mysql_num_rows($result);
-  echo "<p>".sizeof($result_array)."</p>";
-  echo "<p>".$result_array."</p>";
   if ($result_array != 1) {
     echo "<p>Invalid username/password combination</p>";
     header("Location: ./login.php");
   } else {
-    echo "<p>".$result.$result_array."</p>";
-    #header("Location: ./mentee.php?id=".$username."");
+    header("Location: ./mentee.php?id=".$username."");
       
 $cookie_name = "Auth";
 $cookie_value = $username;
