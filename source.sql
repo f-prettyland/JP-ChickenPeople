@@ -16,7 +16,8 @@ CREATE TABLE `mentees` (
   `privacyBit` int(2),
   `picName` varchar(50),
   `story` varchar(2000),
-  PRIMARY KEY (`menteeId`)
+  PRIMARY KEY (`menteeId`),
+  
 );
 
 DROP TABLE IF EXISTS `users`;
@@ -24,9 +25,16 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `userId` varchar(100),
   `password` varchar(50),
-  PRIMARY KEY (`userId`)
+  PRIMARY KEY (`userId`),
+
 );
 
+
+ALTER TABLE `mentees`
+ADD FOREIGN KEY (`menteeId`) REFERENCES users(`userId`);
+
+ALTER TABLE `users`
+ADD FOREIGN KEY (`userId`) REFERENCES mentees(`menteeId`);
 
 # empty the table
 DELETE FROM mentees;
