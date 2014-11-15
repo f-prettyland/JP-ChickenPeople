@@ -16,6 +16,9 @@
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/blog/blog.css" rel="stylesheet">
+
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,6 +40,9 @@
     $id = $_GET['id'];
     $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
     or die(mysql_error());  
+
+    $timelines = mysql_query("SELECT * FROM timeline where userId = $id ORDER BY `id` DESC;")
+    or die(mysql_error());
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
@@ -132,7 +138,23 @@
     <!-- /.container --></div>
     <!-- PROFILE STUFF ENDS HERE-->
 
-  	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
+  	<div role="tabpanel" class="tab-pane fade" id="timeline">
+  		 <!-- TIMELINE STUFF STARTS HERE-->
+
+  		  <div class="container">
+			<?php
+           		while ($bro = mysql_fetch_array($timeline)) {
+            		echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
+		            echo "<p class=\"blog-post-meta\">".$bro['date']." by".$row['menteeName']"</p>";
+		            echo "<p>".$bro['description']."</p>";
+    			}
+			?>
+</div>
+  		
+	 	 <!-- TIMELINE STUFF ENDS HERE-->
+  	</div>
+
+
   	<div role="tabpanel" class="tab-pane fade" id="messages">messages</div>
 
   </div>
