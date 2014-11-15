@@ -34,6 +34,16 @@
     $dbhandle = mysql_connect($hostname, $username, $password) 
       or die("Unable to connect to MySQL");
     echo "Connected to MySQL<br>";
+    $result = mysql_query("SELECT * FROM mentees where menteeId = 0")
+    or die(mysql_error());  
+
+    // store the record of the "example" table into $row
+    $row = mysql_fetch_array( $result );
+    // Print out the contents of the entry 
+
+    echo "Name: ".$row['menteeName'];
+    echo " Age: ".$row['city'];
+
     ?>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
