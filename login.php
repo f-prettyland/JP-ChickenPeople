@@ -62,23 +62,25 @@
 
 
 <?php
-  echo "<p>Got somewhere</p>";
 if (!isset($_POST['submit'])){
 
-<!-- The HTML login form -->
    echo "<div class=\"container\">
 
-      <form class=\"form-signin\" role=\"form\" action=\"$_SERVER['PHP_SELF']\" method=\"post\">
+      <form class=\"form-signin\" role=\"form\" action=".$_SERVER['PHP_SELF']." method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
         <input type=\"text\" id=\"username\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
         <input type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\"required>
-
+        <div class=\"checkbox\">
+          <label>
+            <input type=\"checkbox\" value=\"remember-me\"> Remember me
+          </label>
+        </div>
         <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
-      </form>"
+      </form>";}
 
-        echo "<p>Got somewhere</p>";
+      else {
 
-} else {
+      echo "<p> In submit! </p>";
 
   require_once("db_const.php");
 
@@ -87,13 +89,6 @@ if (!isset($_POST['submit'])){
 
     mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
-
-  $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-  # check connection
-  if ($mysqli->connect_errno) {
-    echo "<p>MySQL error no {$mysqli->connect_errno} : {$mysqli->connect_error}</p>";
-    exit();
-  }
  
   $username = $_POST['username'];
   $password = $_POST['password'];
