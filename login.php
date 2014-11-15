@@ -97,7 +97,7 @@ if (!isset($_POST["submit_b"])){
     echo "<p>Invalid username/password combination</p>";
     header("Location: ./login.php");
   } else {
-    header("Location: ./mentee.php?id=".$username."");
+    header("Location: ./menteeedit.php?id=".$username."");
       
 $cookie_name = "Auth";
 $cookie_value = $username;
