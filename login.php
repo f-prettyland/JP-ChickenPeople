@@ -90,7 +90,7 @@ if (!isset($_POST["submit_b"])){
   $username = $_POST["username_"];
   $password = $_POST["password_"];
  
-  $result = mysql_query("SELECT * from users where userId = $username and password = $password;")
+  $result = mysql_query("SELECT * from users where userId = $username and password = $password limit 1;")
       or die(mysql_error()); 
   $result_array = mysql_fetch_array($result);
   if (sizeof($result_array) != 1) {
@@ -98,6 +98,7 @@ if (!isset($_POST["submit_b"])){
   } else {
     echo "<p>Logged in successfully</p>";
     echo $result_array;
+    echo " Hello ";
       
   }
 }
