@@ -153,7 +153,7 @@
             </div>
             <div class="panel-body">
               <textarea rows="15" cols="60" name="story">
-              <?php echo "\"".$row['story']."\""; ?></textarea>
+              <?php echo $row['story']; ?></textarea>
             </div>
           </div>
       </div>
