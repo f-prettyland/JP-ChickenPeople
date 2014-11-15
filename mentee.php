@@ -127,15 +127,15 @@
 
     </div>
 
-    <script type="text/javascript">
-    	jQuery(document).ready(function ($) {
-        	$('#tabs').tab();
-    	});
-	</script> 
+    <script>
+  		$(function () {
+    		$('#myTab a:last').tab('show')
+  		})
+	</script>
 
     <!-- /.container --></div>
     <!-- PROFILE STUFF ENDS HERE-->
-
+    </div>
   	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
   	<div role="tabpanel" class="tab-pane fade" id="messages">messages</div>
 
