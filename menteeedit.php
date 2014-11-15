@@ -60,7 +60,7 @@
       $story = $_POST['story'];
 
       if($city != NULL){
-        var_dump($id)
+        var_dump($id);
         mysql_query("UPDATE mentees SET city=$city WHERE menteeId=$id;");
         #mysql_query("UPDATE mentees SET country=$country WHERE menteeId=$id;");
         #mysql_query("UPDATE mentees SET product=$product WHERE menteeId=$id;");
