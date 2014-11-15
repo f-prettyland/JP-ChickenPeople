@@ -53,6 +53,7 @@
     function modify($item){
         $val = document.getElementById($item).value;
         $result = mysql_query("UPDATE mentees SET $item=$val where menteeId = $id;");
+      }
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
