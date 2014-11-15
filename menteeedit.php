@@ -48,27 +48,7 @@
 
       // store the record of the "example" table into $row
       $row = mysql_fetch_array( $result );
-      // Print out the contents of the entry  
-
-      if(isset($_POST['update'])){
-          $city= $_POST['city'];
-          $country= $_POST['country'];
-          $product= $_POST['product'];
-          $tag= $_POST['tag'];
-          $gmail= $_POST['gmail'];
-          $phone= $_POST['phone'];
-          $story = $_POST['story'];
-
-
-          mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
-
-      }
+      // Print out the contents of the entry 
 
    
     ?>
@@ -159,6 +139,28 @@
         </form>
     </div>
     </div>
+
+     <?php
+      if(isset($_POST['update'])){
+          $city= $_POST['city'];
+          $country= $_POST['country'];
+          $product= $_POST['product'];
+          $tag= $_POST['tag'];
+          $gmail= $_POST['gmail'];
+          $phone= $_POST['phone'];
+          $story = $_POST['story'];
+
+
+          mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
+          mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
+          mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
+          mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
+          mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
+          mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
+          mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
+
+      }
+      ?>
 
 
 
