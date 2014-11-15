@@ -66,7 +66,7 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
 
-  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees")
+  $result = mysql_query("SELECT menteeId, menteeName, city, country, picName from mentees")
       or die(mysql_error()); 
 
   while(($row = mysql_fetch_assoc($result)) != NULL) {
@@ -77,7 +77,7 @@ $username = $row['menteeId'];
 $photo = $row['picName'];
 ?>
 
-var image = <?php echo "\"./photos/".$photo."\""; ?>;
+var image<?php echo $username ?> = <?php echo "\"".$photo."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
@@ -87,7 +87,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: image,
+            icon: "./photos/" + image<?php echo $username ?> ,
 
             position: results[0].geometry.location
         });
