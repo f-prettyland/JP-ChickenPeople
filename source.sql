@@ -28,17 +28,36 @@ CREATE TABLE `users` (
 );
 
 
+DROP TABLE IF EXISTS `timeline`;
+
+CREATE TABLE `timeline` (
+  `userId` int,
+  `id` int,
+  `date` varchar(50),
+  `title` varchar(50),
+  `description` varchar(50),
+  `photo1` varchar(50),
+  `photo2` varchar(50),
+  `photo3` varchar(50),
+  `photo4` varchar(50),
+  `photo5` varchar(50),
+  PRIMARY KEY (`id`)
+);
+
+
 # empty the table
 DELETE FROM mentees;
 
 DELETE FROM users;
+DELETE FROM timeline;
 
 # load new records into 
 LOAD DATA LOCAL INFILE 'menteeinfo.txt' INTO TABLE mentees;
 LOAD DATA LOCAL INFILE 'usersinfo.txt' INTO TABLE users;
+LOAD DATA LOCAL INFILE 'timelineinfo.txt' INTO TABLE timeline;
 
 
-ALTER TABLE `users`
-ADD FOREIGN KEY (`userId`) REFERENCES mentees(`menteeId`);
+#ALTER TABLE `users`
+#ADD FOREIGN KEY (`userId`) REFERENCES mentees(`menteeId`);
 
 
