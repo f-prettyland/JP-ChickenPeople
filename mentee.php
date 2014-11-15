@@ -140,9 +140,7 @@
   		 <!-- TIMELINE STUFF STARTS HERE-->
 <?php
               foreach($bros as $bro){ 
-                 echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
-                echo "<p class=\"blog-post-meta\">".$bro['date']." by".$row['menteeName']"</p>";
-                echo "<p>".$bro['description']."</p>";
+                var_dump($bro);
               }
                 ?>
   		  <div class="container">
