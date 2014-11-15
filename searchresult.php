@@ -73,7 +73,7 @@
             $stringPic =  "\"./photos/".$row['picName']."\"";
  echo "<div class=\"panel panel-success\">";
       echo "      <div class=\"panel-heading\" style=\"background-color:#F5DA81; color:#FE9A2E\">";
-      echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 0.5px #1C1C1C;\"> <font size=\"5\">".$row[menteeName]."</font> </h1>";
+      echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 0.5px #1C1C1C;\"> <font size=\"5\"><a href=\"./mentee.php?id=".$row['id']."\">".$row[menteeName]."</a></font> </h1>";
       echo "      </div>";
       echo "      <div class=\"panel-body\">";
       echo "        <div class=\"row clearfix\">";
@@ -81,7 +81,7 @@
       echo "    <h4>";
       echo "      <center>";
       echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">";
-      echo "          <img alt=\"140x140\" src=".$stringPic." class=\"img-rounded\" />";
+      echo "          <a href=\"./mentee.php?id=".$row['id']."\"><img alt=\"140x140\" src=".$stringPic." class=\"img-rounded\" /></a>";
       echo "        </h1>";
       echo "      </center>";
       echo "    </h4>";
