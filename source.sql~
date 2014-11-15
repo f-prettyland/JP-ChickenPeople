@@ -41,7 +41,7 @@ CREATE TABLE `timeline` (
   `photo3` varchar(50),
   `photo4` varchar(50),
   `photo5` varchar(50),
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 );
 
 
@@ -57,7 +57,7 @@ LOAD DATA LOCAL INFILE 'usersinfo.txt' INTO TABLE users;
 LOAD DATA LOCAL INFILE 'timelineinfo.txt' INTO TABLE timeline;
 
 
-ALTER TABLE `users`
-ADD FOREIGN KEY (`userId`) REFERENCES mentees(`menteeId`);
+#ALTER TABLE `users`
+#ADD FOREIGN KEY (`userId`) REFERENCES mentees(`menteeId`);
 
 
