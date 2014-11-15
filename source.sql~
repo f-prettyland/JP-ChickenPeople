@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS `mentees`;
 
 CREATE TABLE `mentees` (
   `menteeId` int,
-  `menteeName` int(50),
+  `menteeName` varchar(50),
   `city` varchar(50),
   `country` varchar(50),
   `product` varchar(50),
