@@ -80,8 +80,6 @@ if (!isset($_POST["submit_b"])){
 
   else {
 
-      echo "<p> <br><br><br>In submit! </p>";
-
   require_once("db_const.php");
 
     $dbhandle = mysql_connect(DB_HOST, DB_USER, DB_PASS) 
@@ -93,10 +91,8 @@ if (!isset($_POST["submit_b"])){
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  echo "<p>Got somewhere</p>";
-
  
-  $result = mysql_query("SELECT * from users WHERE userId LIKE $username AND password LIKE $password LIMIT 1")
+  $result = mysql_query("SELECT * from users WHERE userId LIKE $username AND password LIKE $password")
       or die(mysql_error());  
   if (!$result->num_rows == 1) {
     echo "<p>Invalid username/password combination</p>";
