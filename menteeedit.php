@@ -43,6 +43,25 @@
              $id = $_COOKIE[$cookie_name];
       }
 
+
+      $city= $_POST['city'];
+      $country= $_POST['country'];
+      $product= $_POST['product'];
+      $tag= $_POST['tag'];
+      $gmail= $_POST['gmail'];
+      $phone= $_POST['phone'];
+      $story = $_POST['story'];
+
+      if($city != NULL){
+        mysql_query("UPDATE mentees SET city='".$city."' WHERE menteeId = '".$id."'");
+        mysql_query("UPDATE mentees SET country='".$country."' WHERE menteeId = '".$id."';");
+        mysql_query("UPDATE mentees SET product='".$product."' WHERE menteeId = '".$id."';");
+        mysql_query("UPDATE mentees SET tag='".$tag."' WHERE menteeId = '".$id;."'");
+        mysql_query("UPDATE mentees SET gmail='".$gmail."' WHERE menteeId = '".$id."';");
+        mysql_query("UPDATE mentees SET phone='".$phone."' WHERE menteeId = '".$id."';");
+        mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
+      }
+
       //$id = $_GET['id'];
       $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
       or die(mysql_error());  
@@ -51,24 +70,7 @@
       $row = mysql_fetch_array( $result );
       // Print out the contents of the entry 
 
-      
-      $city= $_GET['city'];
-      $country= $_GET['country'];
-      $product= $_GET['product'];
-      $tag= $_GET['tag'];
-      $gmail= $_GET['gmail'];
-      $phone= $_GET['phone'];
-      $story = $_GET['story'];
-
-      if($city != NULL){
-        mysql_query("UPDATE mentees SET city='".$city."' WHERE menteeId = '".$id."'");
-        #mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
-        #mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
-        #mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
-        #mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
-        #mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
-        #mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
-      }
+    
       
    
     ?>
@@ -111,7 +113,7 @@
 </ul>
 </br>
 <div class="row">
-  <form method="get" action="menteeedit.php">
+  <form method="post" action="menteeedit.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
