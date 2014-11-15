@@ -50,6 +50,7 @@
     while($bro = mysql_fetch_array($timelines))
       $bros[] = $bro;
     // Print out the contents of the entry 
+    $i =0;
 
     ?>
 
@@ -94,7 +95,7 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-  	<div role="tabpanel" class="tab-pane fade" id="profile">
+  	<div role="tabpanel" class="tab-pane fade active" id="profile">
 
   	<!-- PROFILE STUFF STARTS HERE-->
   	<div class="container">
@@ -140,10 +141,196 @@
   		 <!-- TIMELINE STUFF STARTS HERE-->
 <?php
               foreach($bros as $bro){ 
-                   echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
+                echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
                 echo "<p class=\"blog-post-meta\">".$bro['date']." by ".$row['menteeName']."</p>";
                 echo "<p>".$bro['description']."</p>";
-              }
+                if($bro.['photo1']!== NULL){
+                  if($bro.['photo2']!== NULL){
+                    if($bro.['photo3']!== NULL){
+                      if($bro.['photo4']!== NULL){
+                         if($bro.['photo5']!== NULL){
+                              $i =5;              
+                          }else{
+                            $i =4; 
+                          }
+                      }else{
+                        $i =3; 
+                      }
+                    }else{
+                      $i =2; 
+                    }
+                  }else{
+                    $i =1; 
+                  }
+                }
+                
+                 switch ($i) {
+                case 0:
+                    break;
+                case 1:
+                    echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"> ";
+                    echo "      <ol class=\"carousel-indicators\">";
+                    echo "        <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
+                    echo "        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>";
+                    echo "      <div class=\"carousel-inner\" role=\"listbox\">";
+                  echo "        <div class=\"item active\">";
+                  echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+                  echo "          <div class=\"container\">";
+                  echo "          </div>";
+                  echo "        </div>";
+                  echo "      </div>";
+                  echo "    </div>";
+                    break;
+                case 2:
+echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"> ";
+echo "      <ol class=\"carousel-indicators\">";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>";
+echo "      </ol>";
+echo "      <div class=\"carousel-inner\" role=\"listbox\">";
+echo "        <div class=\"item active\">";
+echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "      </div>";
+echo "      <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Previous</span>";
+echo "      </a>";
+echo "      <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Next</span>";
+echo "      </a>";
+echo "    </div>";
+                    break;
+                    case 3:
+echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"> ";
+echo "      <ol class=\"carousel-indicators\">";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>";
+echo "      </ol>";
+echo "      <div class=\"carousel-inner\" role=\"listbox\">";
+echo "        <div class=\"item active\">";
+echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo3']."\" alt=\"Third slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "      </div>";
+echo "      <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Previous</span>";
+echo "      </a>";
+echo "      <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Next</span>";
+echo "      </a>";
+echo "    </div>";
+                    break;
+                    case 4:
+echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"> ";
+echo "      <ol class=\"carousel-indicators\">";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>";
+echo "      </ol>";
+echo "      <div class=\"carousel-inner\" role=\"listbox\">";
+echo "        <div class=\"item active\">";
+echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo3']."\" alt=\"Third slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo4']."\" alt=\"Third slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "      </div>";
+echo "      <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Previous</span>";
+echo "      </a>";
+echo "      <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Next</span>";
+echo "      </a>";
+echo "    </div>";
+                    break;
+                    case 5:
+echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"> ";
+echo "      <ol class=\"carousel-indicators\">";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>";
+echo "        <li data-target=\"#myCarousel\" data-slide-to=\"4\"></li>";
+echo "      </ol>";
+echo "      <div class=\"carousel-inner\" role=\"listbox\">";
+echo "        <div class=\"item active\">";
+echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo3']."\" alt=\"Third slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo4']."\" alt=\"Third slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "        <div class=\"item\">";
+echo "          <img src=\"".$bro.['photo5']."\" alt=\"Third slide\">";
+echo "          <div class=\"container\">";
+echo "          </div>";
+echo "        </div>";
+echo "      </div>";
+echo "      <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Previous</span>";
+echo "      </a>";
+echo "      <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">";
+echo "        <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>";
+echo "        <span class=\"sr-only\">Next</span>";
+echo "      </a>";
+echo "    </div>";
+                    break;
+            }
+          }
                 ?>
   		  <div class="container">
 

@@ -88,8 +88,15 @@ var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
+             
+              var image_ = {
+              url: "./photos/" + image<?php echo $username ?>,
+              // This marker is 20 pixels wide by 32 pixels tall.
+              size: new google.maps.Size(20, 32),
+              };
+
             map: map,
-            icon: "./photos/" + image<?php echo $username ?> ,
+            icon: image_,
 
             position: results[0].geometry.location
         });
