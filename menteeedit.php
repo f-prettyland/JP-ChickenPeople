@@ -100,7 +100,9 @@
             <div class="panel-body">
              City:<br>
               <input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+               <button type="button" class="btn btn-sm btn-warning" action="<?php
+                $result = mysql_query("UPDATE mentees SET city=value where menteeId = $id;")
+               ?>">Modify</button> 
               <br>
               Country:<br>
               <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
