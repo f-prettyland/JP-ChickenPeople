@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="http://www.cherieblairfoundation.org/wp-content/uploads/2012/08/favicon-3.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Mentee</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
