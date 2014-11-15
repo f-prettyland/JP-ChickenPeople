@@ -50,26 +50,27 @@
       $row = mysql_fetch_array( $result );
       // Print out the contents of the entry 
 
+      
+      $city= $_GET['city'];
+      $country= $_GET['country'];
+      $product= $_GET['product'];
+      $tag= $_GET['tag'];
+      $gmail= $_GET['gmail'];
+      $phone= $_GET['phone'];
+      $story = $_GET['story'];
 
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-          $city= $_POST['city'];
-          $country= $_POST['country'];
-          $product= $_POST['product'];
-          $tag= $_POST['tag'];
-          $gmail= $_POST['gmail'];
-          $phone= $_POST['phone'];
-          $story = $_POST['story'];
-
-
-          mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
-          mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
-
+      if($city != NULL){
+      mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
+      #mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
+      #mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
+      #mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
+      #mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
+      #mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
+      #mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
       }
+      
+
+      
 
    
     ?>
@@ -94,7 +95,8 @@
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
-            <button type="submit" class="btn btn-warning">Search</button>
+           <button type="submit" class="btn btn-warning">Search</button>
+
           </form></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -111,7 +113,7 @@
 </ul>
 </br>
 <div class="row">
-  <form form method="post">
+  <form method="get" action="menteeedit.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
@@ -139,7 +141,7 @@
               Phone Number:<br>
               <input type="text" id="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <br>
-               <input type="submit" value="Submit Changes">
+               <button type="submit" class="btn btn-warning">Submit Changes</button>
               <br>
           
             </div>
@@ -159,6 +161,7 @@
         </form>
     </div>
     </div>
+
 
 
 

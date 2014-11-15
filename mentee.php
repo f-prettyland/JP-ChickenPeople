@@ -86,7 +86,7 @@
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
     <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Timeline</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="contact" role="tab" data-toggle="tab">Contact</a></li>
+    <li role="presentation"><a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -129,11 +129,6 @@
 
 
 
-    <script>
-  		$(function () {
-    		$('#myTab a:last').tab('show')
-  		})
-	</script>
 
     <!-- /.container --></div>
     <!-- PROFILE STUFF ENDS HERE-->
@@ -149,7 +144,7 @@
   	</div>
 
 
-  	<div role="tabpanel" class="tab-pane fade" id="Contact">
+  	<div role="tabpanel" class="tab-pane fade" id="contact">
 		<!-- CONTACT STUFF STARTS HERE-->
 
 		<div class="row">
