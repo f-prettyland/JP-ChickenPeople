@@ -93,7 +93,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    header("Location: " + location<?php echo $username ?>);
+    document.getElementById(other-stuff).innerHTML = location<?php echo $username ?>;
     });
       }
     });
