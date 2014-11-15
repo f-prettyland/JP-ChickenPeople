@@ -77,30 +77,29 @@ $username = $row['menteeId'];
 $photo = $row['picName'];
 ?>
 
-var image = <?php echo "\"".$photo."\""; ?>;
+var image<?php echo $username ?> = <?php echo "\"".$photo."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
-var location = "Location: ./mentee.php?id=" + mentee;
+var location<?php echo $username ?> = "Location: ./mentee.php?id=" + mentee;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: "./photos/" + image,
+            icon: "./photos/" + image<?php echo $username ?> ,
 
             position: results[0].geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    header(location);
+    document.getElementById("other-stuff").innerHTML = location<?php echo $username ?>;
     });
       }
     });
 <?php
 }
 ?>
-    map.setCenter(0,0);
 
 }
 
@@ -159,9 +158,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <p class="lead">Some text describing the project.</p>
       </div>
     </div><!-- /.container -->
+   
+    <div>
+      <h2> id="other-stuff"> </h2>
+      <br>    <div id="other-stuff"></div>
+    </div>
 
       <div id="map-canvas"></div>
-    <div id="other-stuff"></div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
