@@ -99,6 +99,9 @@ if (!isset($_POST["submit_b"])){
   } else {
     echo "<p>".$result.$result_array."</p>";
       
+$cookie_name = "Auth";
+$cookie_value = $username;
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
   }
 }
 ?>
