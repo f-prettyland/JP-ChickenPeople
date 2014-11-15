@@ -56,30 +56,28 @@
       </div>
     </nav>
 
-    
+
 
     <div class="container">
 
 
 <?php
+  echo "<p>Got somewhere</p>";
 if (!isset($_POST['submit'])){
-?>
+
 <!-- The HTML login form -->
-    <div class="container">
+   echo "<div class=\"container\">
 
-      <form class="form-signin" role="form" action="<?=$_SERVER['PHP_SELF']?>" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" id="username" class="form-control" placeholder="Username" method="post" action="checklogin.php" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" method="post" action="checklogin.php"required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-warning btn-block" type="submit" value="Login">Log in</button>
-      </form>
+      <form class=\"form-signin\" role=\"form\" action=\"$_SERVER['PHP_SELF']\" method=\"post\">
+        <h2 class=\"form-signin-heading\">Please sign in</h2>
+        <input type=\"text\" id=\"username\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
+        <input type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\"required>
 
-<?php
+        <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
+      </form>"
+
+        echo "<p>Got somewhere</p>";
+
 } else {
 
   require_once("db_const.php");
@@ -99,6 +97,9 @@ if (!isset($_POST['submit'])){
  
   $username = $_POST['username'];
   $password = $_POST['password'];
+
+  echo "<p>Got somewhere</p>";
+
  
   $result = mysql_query("SELECT * from users WHERE userId LIKE $username AND password LIKE $password LIMIT 1")
       or die(mysql_error());  
@@ -106,7 +107,7 @@ if (!isset($_POST['submit'])){
     echo "<p>Invalid username/password combination</p>";
   } else {
     echo "<p>Logged in successfully</p>";
-    // do stuffs
+      
   }
 }
 ?>
