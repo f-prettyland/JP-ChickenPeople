@@ -144,6 +144,7 @@
                 echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
                 echo "<p class=\"blog-post-meta\">".$bro['date']." by ".$row['menteeName']."</p>";
                 echo "<p>".$bro['description']."</p>";
+                echo "<p>".$bro['photo1']."</p>";
                 if($bro.['photo1']!== NULL){
                   var_dump($bro.['photo1']);
                   if($bro.['photo2']!== NULL){
