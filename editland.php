@@ -27,7 +27,7 @@
   </head>
 
   <body>
-<?php
+    <?php
       $hostname = "localhost";
       $username = "root";
       $password = "cfg2014!";
@@ -44,18 +44,18 @@
       }
 
 
-      $city= $_GET['city'];
-      $country= $_GET['country'];
-      $product= $_GET['product'];
-      $tag= $_GET['tag'];
-      $gmail= $_GET['gmail'];
-      $phone= $_GET['phone'];
-      $story = $_GET['story'];
+      $city= $_POST['city'];
+      $country= $_POST['country'];
+      $product= $_POST['product'];
+      $tag= $_POST['tag'];
+      $gmail= $_POST['gmail'];
+      $phone= $_POST['phone'];
+      $story = $_POST['story'];
      
       mysql_query("UPDATE mentees SET city='".$city."' WHERE menteeId = '".$id."'");
       mysql_query("UPDATE mentees SET country='".$country."' WHERE menteeId = '".$id."';");
       mysql_query("UPDATE mentees SET product='".$product."' WHERE menteeId = '".$id."';");
-      mysql_query("UPDATE mentees SET tag='".$tag."' WHERE menteeId = '".$id;."'");
+      mysql_query("UPDATE mentees SET tag='".$tag."' WHERE menteeId = '".$id."';");
       mysql_query("UPDATE mentees SET gmail='".$gmail."' WHERE menteeId = '".$id."';");
       mysql_query("UPDATE mentees SET phone='".$phone."' WHERE menteeId = '".$id."';");
       mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
@@ -92,8 +92,12 @@
     </nav>
 
     <div class="container">
-        Your profile has been edited! 
-    </div>
+</br>
+</br>
+</br>
+<div class="row">Thanks for editing!</div>
+
+
 
 
 

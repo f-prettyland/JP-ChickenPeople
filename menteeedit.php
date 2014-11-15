@@ -44,6 +44,16 @@
       }
 
 
+  
+      //$id = $_GET['id'];
+      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
+      or die(mysql_error());  
+
+      // store the record of the "example" table into $row
+      $row = mysql_fetch_array( $result );
+      // Print out the contents of the entry 
+
+
       $city= $_POST['city'];
       $country= $_POST['country'];
       $product= $_POST['product'];
@@ -52,14 +62,6 @@
       $phone= $_POST['phone'];
       $story = $_POST['story'];
      
-      mysql_query("UPDATE mentees SET city='".$city."' WHERE menteeId = '".$id."'");
-      mysql_query("UPDATE mentees SET country='".$country."' WHERE menteeId = '".$id."';");
-      mysql_query("UPDATE mentees SET product='".$product."' WHERE menteeId = '".$id."';");
-      mysql_query("UPDATE mentees SET tag='".$tag."' WHERE menteeId = '".$id."';");
-      mysql_query("UPDATE mentees SET gmail='".$gmail."' WHERE menteeId = '".$id."';");
-      mysql_query("UPDATE mentees SET phone='".$phone."' WHERE menteeId = '".$id."';");
-      mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
-
 
       //$id = $_GET['id'];
       $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
@@ -68,6 +70,7 @@
       // store the record of the "example" table into $row
       $row = mysql_fetch_array( $result );
       // Print out the contents of the entry 
+
 
     ?>
 
@@ -109,7 +112,7 @@
 </ul>
 </br>
 <div class="row">
-  <form method="post" action="menteeedit.php">
+  <form method="post" action="editland.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
@@ -149,8 +152,7 @@
               <h3 class="panel-title" >Your story</h3>
             </div>
             <div class="panel-body">
-              <textarea rows="15" cols="60" name="story">
-              <?php echo "\"".$row['story']."\""; ?></textarea>
+              <textarea rows="15" cols="60" name="story"><?php echo $row['story']; ?></textarea>
             </div>
           </div>
       </div>
