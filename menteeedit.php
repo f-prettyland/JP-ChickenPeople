@@ -48,10 +48,9 @@
 
       // store the record of the "example" table into $row
       $row = mysql_fetch_array( $result );
-      // Print out the contents of the entry 
+      // Print out the contents of the entry  
 
-
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if(isset($_POST['update'])){
           $city= $_POST['city'];
           $country= $_POST['country'];
           $product= $_POST['product'];
@@ -94,7 +93,8 @@
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
-            <button type="submit" class="btn btn-warning">Search</button>
+            <input name="update" type="submit" id="update" value="Update">
+            <!--<button type="submit" class="btn btn-warning">Search</button>-->
           </form></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -111,7 +111,7 @@
 </ul>
 </br>
 <div class="row">
-  <form form method="post">
+  <form method="post" action="<?php $_PHP_SELF ?>">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
