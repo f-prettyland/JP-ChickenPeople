@@ -61,13 +61,13 @@
           $story = $_GET['story'];
 
 
-          $result = mysql_query("UPDATE mentees SET city=$city where menteeId = $id;");
-          $result = mysql_query("UPDATE mentees SET country=$country where menteeId = $id;");
-          $result = mysql_query("UPDATE mentees SET product=$product where menteeId = $id;");
-          $result = mysql_query("UPDATE mentees SET tag=$tag where menteeId = $id;");
-          $result = mysql_query("UPDATE mentees SET gmail=$gmail where menteeId = $id;");
-          $result = mysql_query("UPDATE mentees SET phone=$phone where menteeId = $id;");
-          $result = mysql_query("UPDATE mentees SET story=$story where menteeId = $id;");
+          mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;", $dbhandle );
+          mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;", $dbhandle);
+          mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;",$dbhandle);
+          mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;", $dbhandle);
+          mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;", $dbhandle);
+          mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;", $dbhandle);
+          mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;", $dbhandle);
 
       }
 
