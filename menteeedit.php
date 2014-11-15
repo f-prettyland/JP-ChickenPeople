@@ -90,9 +90,6 @@
   <input type="text" name="lastname" value=<?php echo "".$row['story']; ?> >
 </form>
 
-
-      </div>
-
     </div><!-- /.container -->
 
 
