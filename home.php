@@ -75,8 +75,8 @@ $city = $row['city'];
 $country = $row['country'];
 ?>
 
-var city_name = <?php echo $city; ?>;
-var country_name = <?php echo $country; ?>;
+var city_name = <?php echo "\"".$city."\""; ?>;
+var country_name = <?php echo "\"".$country."\""; ?>;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
