@@ -89,31 +89,31 @@
               <h3 class="panel-title" >Your details</h3>
             </div>
             <div class="panel-body">
-             City:<br>
+             City: 
               <input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Country:<br>
+              Country:  
               <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Product:<br>
+              Product: 
               <input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Tag:<br>
+              Tag:  
               <input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Gmail:<br>
+              Gmail:  
               <input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Phone Number:<br>
+              Phone Number:  
               <input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Do you want your contact details to remain private?<br>
+              Do you want your contact details to remain private?
               <input type="checkbox" name="option3" value="Cheese">Protect my data<br> 
             </div>
           </div>
@@ -124,7 +124,7 @@
               <h3 class="panel-title" >Your story</h3>
             </div>
             <div class="panel-body">
-              <textarea rows="10" cols="60" name="story">
+              <textarea rows="15" cols="60" name="story">
               <?php echo "\"".$row['story']."\""; ?></textarea>
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
             </div>
