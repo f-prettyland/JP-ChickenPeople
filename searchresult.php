@@ -89,7 +89,7 @@
       echo "  <div class=\"col-md-4 column\">";
       echo "    <h4>";
       echo "       <h1 class=\"panel-title\" style=\"text:  1px 1px 1px #1C1C1C;\">";
-      echo "          <font size=\"4\" color=\"#FE9A2E\">Product:</font>".$row[product]."";
+      echo "          <font size=\"4\" color=\"#FE9A2E\">Product: </font>".$row[product]."";
       echo "       </h1>";
       echo "     </br>";
       echo "       <h1 class=\"panel-title\" style=\"text:  1px 1px 1px #1C1C1C;\">";
