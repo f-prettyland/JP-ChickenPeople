@@ -93,20 +93,6 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 ?>
 
 
-
-    
-
-
-  var marker2 = new google.maps.Marker({
-    position: new google.maps.LatLng(-25.363882, 0.044922),
-    icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f434-horse%20face.png",
-    map: map
-  });
-    google.maps.event.addListener(marker2, 'click', function() {
-    // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "boop";
-    });
-
  infoWindow = new google.maps.InfoWindow();
 
 }
