@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="http://www.cherieblairfoundation.org/wp-content/uploads/2012/08/favicon-3.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Edit Profile</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -89,7 +89,14 @@
             <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
             <li><a href="./home.php">Home</a></li>
-            <li ><a href="./login.php">Log In</a></li>
+            <?php
+        if(!isset($_COOKIE[$cookie_name])) {
+          echo"<li ><a href=\"./login.php\">Log In</a></li>";
+        }
+        else{
+          echo"<li ><a href=\"./logout.php\">Logout</a></li>";
+        }
+      ?>
             <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
@@ -105,11 +112,12 @@
     <div class="container">
 </br>
 </br>
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Timeline</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Timeline</a></li>
+  </ul>
+
 </br>
 <div class="row">
   <form method="post" action="editland.php">

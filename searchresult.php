@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Search Result</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -57,10 +57,10 @@
 
     <?php
         if(!isset($_COOKIE[$cookie_name])) {
-          <li ><a href="./login.php">Log In</a></li>
+          echo"<li ><a href=\"./login.php\">Log In</a></li>";
         }
         else{
-          <li ><a href="./logout.php">Logout In</a></li>
+          echo"<li ><a href=\"./logout.php\">Logout</a></li>";
         }
       ?>
             

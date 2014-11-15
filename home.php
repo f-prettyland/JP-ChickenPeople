@@ -33,13 +33,13 @@ function initialize() {
 
   geocoder = new google.maps.Geocoder();
   var mapOptions = {
-    zoom: 1,
+    zoom: 2,
     center: new google.maps.LatLng(0, 0),
 disableDefaultUI: true,
 mapTypeControl: false,
-      draggable: false,
-      scaleControl: false,
-      scrollwheel: false,
+      draggable: true,
+      scaleControl: true,
+      scrollwheel: true,
         disableDoubleClickZoom: true,
       navigationControl: false,
       streetViewControl: false,
@@ -85,17 +85,23 @@ var mentee = <?php echo "\"".$username."\""; ?>;
 var name<?php echo $username ?> = <?php echo "\"".$name."\""; ?>;
 var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
 
+var icon<?php echo $username ?> = new google.maps.MarkerImage(
+            "./photos/Small-triangle-black.jpg">, //url
+            new google.maps.Size(40, 40), //size 
+            new google.maps.Point(0,0)
+    );
+
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: "./photos/" + image<?php echo $username ?> ,
+            icon: icon<?php echo $username ?> ,
 
             position: results[0].geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
+    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"./mentee.php?id=" + web_location<?php echo $username ?> +"\"><img alt=\"140x140\" src= \"./photos/" + image<?php echo $username ?>+"\" class=\"img-rounded\" /></a> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
       }
     });
 <?php
@@ -156,7 +162,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
       <div class="starter-template">
         <h1>Empowering women, creating connections</h1>
-        <p class="lead">Some text describing the project.</p>
+        <p class="lead">A network for corageous femail enterpreneurs from various backgrounds.</p>
       </div>
      <div id="other-stuff">
       <h3><br></h3>

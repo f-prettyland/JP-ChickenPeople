@@ -95,7 +95,13 @@
 </br>
 </br>
 </br>
+<center>
 <div class="row">Thanks for editing!</div>
+<form action="menteeedit.php">
+    <button type="submit" class="btn btn-warning">Back</button>
+</form>
+</center>
+</div>
 
 
 
