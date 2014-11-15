@@ -97,7 +97,7 @@ if (!isset($_POST["submit_b"])){
   if (sizeof($result_array) != 1) {
     echo "<p>Invalid username/password combination</p>";
   } else {
-    echo "<p>Logged in successfully</p>";
+    echo "<p>".$result.$result_array."</p>";
       
   }
 }
