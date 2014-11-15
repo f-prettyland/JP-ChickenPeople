@@ -174,7 +174,8 @@
             <div class="form-group">
                  <h5><label for="inputMobile">Mobile</label></h5>
 
-                <input type="tel" name="career[mobile]" class="form-control" tabindex="3" placeholder="Enter your mobile number" pattern="[0-9]{10}" maxlength="10" required>
+                <textarea name="career[message]" class="form-control" tabindex="4"
+          placeholder="Write your details" required></textarea>
             </div>
             <div class="form-group">
                  <h5><label for="inputMessage">Message</label></h5>
