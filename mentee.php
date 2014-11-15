@@ -144,7 +144,7 @@
   	</div>
 
 
-  	<div role="tabpanel" class="tab-pane fade" id="Contact">
+  	<div role="tabpanel" class="tab-pane fade" id="contact">
 		<!-- CONTACT STUFF STARTS HERE-->
 
 		<div class="row">
