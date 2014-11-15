@@ -84,17 +84,14 @@ var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
 var name<?php echo $username ?> = <?php echo "\"".$name."\""; ?>;
 var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
-
-geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        var marker = new google.maps.Marker({
-             
-              var image_ = {
-              url: "./photos/" + image<?php echo $username ?>,
+var image_ = {url: "./photos/" + image<?php echo $username ?>,
               // This marker is 20 pixels wide by 32 pixels tall.
               size: new google.maps.Size(20, 32),
               };
 
+geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var marker = new google.maps.Marker({
             map: map,
             icon: image_,
 
