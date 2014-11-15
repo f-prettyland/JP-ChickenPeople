@@ -17,7 +17,20 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+ <?php
+    $hostname = "localhost";
+    $username = "root";
+    $password = "cfg2014!";
 
+    $dbhandle = mysql_connect($hostname, $username, $password) 
+      or die("Unable to connect to MySQL");
+    mysql_select_db("data") or die(mysql_error());
+    echo "Connected to MySQL<br>";
+    $id = $_GET['id'];
+    $result = mysql_query("SELECT * FROM mentees")
+    or die(mysql_error());  
+
+    ?>
     <script>
 // This example uses SVG path notation to add a vector-based symbol
 // as the icon for a marker. The resulting icon is a star-shaped symbol
