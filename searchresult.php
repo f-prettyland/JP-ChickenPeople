@@ -57,7 +57,10 @@
 
     <?php
         if(!isset($_COOKIE[$cookie_name])) {
-          <li ><a href="./login.php">Log In</a></li>
+          echo"<li ><a href="./login.php">Log In</a></li>";
+        }
+        else{
+          echo"<li ><a href="./logout.php">Logout In</a></li>";
         }
       ?>
             
