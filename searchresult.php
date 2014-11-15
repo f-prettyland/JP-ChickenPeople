@@ -71,8 +71,8 @@
 <?php
            while ($row = mysql_fetch_array($result)) {
             $stringPic =  "\"./photos/".$row['picName']."\"";
-            $personlink =  "\"./mentee.php?id=".$row['id']."\"";
- echo "<div class=\"panel panel-success\">";
+            $personlink =  "\"./mentee.php?id=".$row['menteeId']."\"";
+      echo "<div class=\"panel panel-success\">";
       echo "      <div class=\"panel-heading\" style=\"background-color:#F5DA81; color:#FE9A2E\">";
       echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 0.5px #1C1C1C;\"> <font size=\"5\"><a href=".$personlink">".$row[menteeName]."</a></font> </h1>";
       echo "      </div>";
