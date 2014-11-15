@@ -85,8 +85,8 @@
 <div class="row">
         <div class="col-sm-6">
           <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title" style="background-color:#F5DA81">Your details</h3>
+            <div class="panel-heading" style="background-color:#F5DA81">
+              <h3 class="panel-title" >Your details</h3>
             </div>
             <div class="panel-body">
              City:<br>
@@ -120,8 +120,8 @@
       </div>
       <div class="col-sm-6">
           <div class="panel panel-default">
-            <div class="panel-heading" >
-              <h3 class="panel-title" style="background-color:#F5DA81">Your story</h3>
+            <div class="panel-heading" style="background-color:#F5DA81">
+              <h3 class="panel-title" >Your story</h3>
             </div>
             <div class="panel-body">
                             
