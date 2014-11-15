@@ -97,6 +97,7 @@ if (!isset($_POST["submit_b"])){
       or die(mysql_error()); 
   echo $result;
   $result_array = mysql_fetch_array($result);
+  echo $result_array;
   if (sizeof($result_array) != 1) {
     echo "<p>Invalid username/password combination</p>";
   } else {
