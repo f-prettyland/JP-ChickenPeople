@@ -129,11 +129,6 @@
 
 
 
-    <script>
-  		$(function () {
-    		$('#myTab a:last').tab('show')
-  		})
-	</script>
 
     <!-- /.container --></div>
     <!-- PROFILE STUFF ENDS HERE-->
