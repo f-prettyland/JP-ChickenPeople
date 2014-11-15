@@ -56,12 +56,13 @@
       </div>
     </nav>
 
-    
+
 
     <div class="container">
 
 
 <?php
+  echo "<p>Got somewhere</p>";
 if (!isset($_POST['submit'])){
 ?>
 <!-- The HTML login form -->
@@ -99,6 +100,9 @@ if (!isset($_POST['submit'])){
  
   $username = $_POST['username'];
   $password = $_POST['password'];
+
+  echo "<p>Got somewhere</p>";
+
  
   $result = mysql_query("SELECT * from users WHERE userId LIKE $username AND password LIKE $password LIMIT 1")
       or die(mysql_error());  
@@ -106,7 +110,7 @@ if (!isset($_POST['submit'])){
     echo "<p>Invalid username/password combination</p>";
   } else {
     echo "<p>Logged in successfully</p>";
-    // do stuffs
+      
   }
 }
 ?>
