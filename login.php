@@ -72,11 +72,7 @@ if (!isset($_POST['submit'])){
         <h2 class=\"form-signin-heading\">Please sign in</h2>
         <input type=\"text\" id=\"username\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
         <input type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\"required>
-        <div class=\"checkbox\">
-          <label>
-            <input type=\"checkbox\" value=\"remember-me\"> Remember me
-          </label>
-        </div>
+
         <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
       </form>"
 
