@@ -76,6 +76,7 @@ $country = $row['country'];
 ?>
 
 var image = <?php "\"./photos/".$row['picName']."\""; ?>;
+<p> image </p>
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 
