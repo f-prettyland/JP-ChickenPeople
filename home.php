@@ -74,9 +74,10 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 $city = $row['city'];
 $country = $row['country'];
 $username = $row['menteeId'];
+$photo = $row['picName'];
 ?>
 
-var image = <?php echo "\"./photos/".$row['picName']."\""; ?>;
+var image = <?php echo "\"./photos/".$photo."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
