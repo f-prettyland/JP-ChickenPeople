@@ -87,16 +87,8 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-  	<div role="tabpanel" class="tab-pane fade in active" id="home">...</div>
-  	<div role="tabpanel" class="tab-pane fade" id="profile">profile</div>
-  	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
-  	<div role="tabpanel" class="tab-pane fade" id="messages">messages</div>
-
-  </div>
-
-</div>
-</br>
-<div class="container">
+  	<div role="tabpanel" class="tab-pane fade" id="profile">
+  	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-2 column">
 			<h3>
@@ -132,7 +124,15 @@
 
       </div>
 
-    </div><!-- /.container -->
+    </div><!-- /.container --></div>
+  	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
+  	<div role="tabpanel" class="tab-pane fade" id="messages">messages</div>
+
+  </div>
+
+</div>
+</br>
+
 
 
     <!-- Bootstrap core JavaScript

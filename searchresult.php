@@ -35,7 +35,7 @@
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
     $searchcrit = $_GET['search'];
-    $result = mysql_query("SELECT * FROM mentees where tag LIKE '%$searchcrit%'")
+    $result = mysql_query("SELECT * FROM mentees where tag LIKE '%$searchcrit%'OR city = '$searchcrit' OR menteeName LIKE '%$searchcrit%' OR country = '$searchcrit'")
     or die(mysql_error());  
 
     ?>
@@ -107,15 +107,11 @@
             <td>Date</td>
         </tr>
   <?php
-           $i = 0;
            while ($row = mysql_fetch_array($result)) {
-               $class = ($i == 0) ? "" : "alt";
-               echo "<tr class=\"".$class."\">";
                echo "<td>".$row[menteeName]."</td>";
                echo "<td>".$row[product]."</td>";
                echo "<td>".$row[story]."</td>";
                echo "</tr>";
-               $i = ($i==0) ? 1:0;
            }
 
         ?>
