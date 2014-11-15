@@ -1,7 +1,0 @@
-<?php
-require('comments/inc_rate.php');
-getComments("demo");
-submitComments("1",$_SERVER['PHP_SELF']);
-//IMPORTANT: Replace "1" with a unique number for the page. For example, for this page, I use "1".
-?>
-
