@@ -140,7 +140,9 @@
   		 <!-- TIMELINE STUFF STARTS HERE-->
 <?php
               foreach($bros as $bro){ 
-                var_dump($bro);
+                foreach($bro as $brow){
+                var_dump($brow);
+            }
               }
                 ?>
   		  <div class="container">
