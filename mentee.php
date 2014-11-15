@@ -79,7 +79,6 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
     <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Messages</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Settings</a></li>
@@ -88,6 +87,8 @@
   <!-- Tab panes -->
   <div class="tab-content">
   	<div role="tabpanel" class="tab-pane fade" id="profile">
+
+  	<!-- PROFILE STUFF STARTS HERE-->
   	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-2 column">
@@ -125,6 +126,8 @@
       </div>
 
     </div><!-- /.container --></div>
+    <!-- PROFILE STUFF ENDS HERE-->
+
   	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
   	<div role="tabpanel" class="tab-pane fade" id="messages">messages</div>
 

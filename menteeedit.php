@@ -83,32 +83,32 @@
 </br>
 
 City:<br>
-<input type="text" name="city" value =<?php echo "".$row['city']; ?> size="40">
+<input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="40">
  <button type="button">Click Me!</button> 
 <br>
 Country:<br>
-<input type="text" name="country" value=<?php echo "".$row['country']; ?> size="40">
+<input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="40">
  <button type="button">Click Me!</button> 
 <br>
 Product:<br>
-<input type="text" name="product" value=<?php echo "".$row['product']; ?> size="40">
+<input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="40">
  <button type="button">Click Me!</button> 
 <br>
 Tag:<br>
-<input type="text" name="tag" value=<?php echo "".$row['tag']; ?> size="40">
+<input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="40">
  <button type="button">Click Me!</button> 
 <br>
 Gmail:<br>
-<input type="text" name="gmail" value=<?php echo "".$row['gmail']; ?> size="40">
+<input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="40">
  <button type="button">Click Me!</button> 
 <br>
 Phone Number:<br>
-<input type="text" name="phone" value=<?php echo "".$row['phone']; ?> size="40">
+<input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="40">
  <button type="button">Click Me!</button> 
 Do you want your contact details to remain private?<br>
 <input type="checkbox" name="option3" value="Cheese"> Cheese<br> 
 Story<br>
-<input type="text" name="story" value=<?php echo "".$row['story']; ?> size="1000">
+<input type="text" name="story" value=<?php echo "\"".$row['story']."\""; ?> size="100">
  <button type="button">Click Me!</button> 
 </div><!-- /.container -->
 
