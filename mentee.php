@@ -50,6 +50,7 @@
     while($bro = mysql_fetch_array($timelines))
       $bros[] = $bro;
     // Print out the contents of the entry 
+    $i =0;
 
     ?>
 
@@ -143,7 +144,6 @@
                 echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
                 echo "<p class=\"blog-post-meta\">".$bro['date']." by ".$row['menteeName']."</p>";
                 echo "<p>".$bro['description']."</p>";
-                var $i =0;
                 if($bro.['photo1']!= NULL){
                   if($bro.['photo2']!= NULL){
                     if($bro.['photo3']!= NULL){
@@ -163,7 +163,7 @@
                     $i =1; 
                   }
                 }
-                }
+                
                  switch ($i) {
                 case 0:
                     break;
@@ -330,6 +330,7 @@ echo "      </a>";
 echo "    </div>";
                     break;
             }
+          }
                 ?>
   		  <div class="container">
 
