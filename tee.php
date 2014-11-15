@@ -42,9 +42,6 @@
     $row = mysql_fetch_array( $result );
     // Print out the contents of the entry 
 
-    echo "Name: ".$row['menteeName'];
-    echo " Age: ".$row['city'];
-
     ?>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -75,8 +72,8 @@
         <div class="col-sm-4">
           <ul class="list-group">
             <li class="list-group-item"><img alt="Brand" width="20"src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.Png"></li>
-            <li class="list-group-item">My Name IS</li>
-            <li class="list-group-item">CITY</li>
+            <li class="list-group-item"><?php echo "Name: ".$row['menteeName']; ?></li>
+            <li class="list-group-item"><?php echo "City: ".$row['city']; ?></li>
             <li class="list-group-item">Country</li>
           </ul>
         </div>
