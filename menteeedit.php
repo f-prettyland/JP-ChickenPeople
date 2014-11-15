@@ -34,14 +34,26 @@
     $dbhandle = mysql_connect($hostname, $username, $password) 
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
-    $id = $_GET['id'];
-    $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
+    
+    $cookie_name = "Auth";
+    if(!isset($_COOKIE[$cookie_name])) {
+           echo "Cookie named '" . $cookie_name . "' does not exist!";
+    } else {
+           $id = $_COOKIE[$cookie_name];
+    }
+
+    //$id = $_GET['id'];
+    $result = mysql_query("SELECT * FROM mentees where menteeId = $id;");
     or die(mysql_error());  
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
     // Print out the contents of the entry 
 
+    function modify($item){
+        $val = document.getElementById($item).value;
+        $result = mysql_query("UPDATE mentees SET $item=$val where menteeId = $id;");
+      }
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -53,19 +65,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./home.html">Cherie Blaire Project Network</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="200"></li>
+            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-            <li class="active"><a href="./home.html">Home</a></li>
-            <li><a href="./login.html">Log In</a></li>
-            <li><form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="search" class="form-control">
+            <li><a href="./home.php">Home</a></li>
+            <li ><a href="./login.php">Log In</a></li>
+            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
+            <div class="form-group" >
+              <input type="text" placeholder="Search" name="search">
             </div>
-            <button type="submit"class="btn btn-warning">Search</button>
+            <button type="submit" class="btn btn-warning">Search</button>
           </form></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -83,93 +94,56 @@
 </br>
 
 <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+            <div class="panel-heading" style="background-color:#F5DA81">
+              <h3 class="panel-title" >Your details</h3>
             </div>
             <div class="panel-body">
-              Panel content
+             City:<br>
+              <input type="text" id="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning" onclick="modify(city)">Modify</button> 
+              <br>
+              Country:<br>
+              <input type="text" id="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning" action="">Modify</button> 
+              <br>
+              Product:<br>
+              <input type="text" id="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+              <br>
+              Tag:<br>
+              <input type="text" id="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+              <br>
+              Gmail:<br>
+              <input type="text" id="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+              <br>
+              Phone Number:<br>
+              <input type="text" id="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+              <br>
+              Do you want your contact details to remain private?<br>
+              <input type="checkbox" id="option3" value="Cheese">Protect my data<br> 
             </div>
           </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
-        <div class="col-sm-4">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
-        <div class="col-sm-4">
-          <div class="panel panel-warning">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-          <div class="panel panel-danger">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
       </div>
-      
-City:<br>
-<input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Country:<br>
-<input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Product:<br>
-<input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Tag:<br>
-<input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Gmail:<br>
-<input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Phone Number:<br>
-<input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Do you want your contact details to remain private?<br>
-<input type="checkbox" name="option3" value="Cheese"> Protext my data<br> 
-Story<br>
-<textarea rows="10" cols="100" name="story">
-<?php echo "\"".$row['story']."\""; ?></textarea>
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-</div><!-- /.container -->
+      <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading" style="background-color:#F5DA81">
+              <h3 class="panel-title" >Your story</h3>
+            </div>
+            <div class="panel-body">
+              <textarea rows="15" cols="60" name="story">
+              <?php echo "\"".$row['story']."\""; ?></textarea>
+               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+            </div>
+          </div>
+      </div>
+    </div>
+
+
 
 
     <!-- Bootstrap core JavaScript

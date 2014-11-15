@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="http://www.cherieblairfoundation.org/wp-content/uploads/2012/08/favicon-3.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Log In</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -37,17 +37,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./home.html">Cherie Blaire Project Network</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-<ul class="nav navbar-nav">
-            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="200"></li>
+          <ul class="nav navbar-nav">
+            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-            <li><a href="./home.html">Home</a></li>
-            <li class="active"><a href="./login.html">Log In</a></li>
-            <li><form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="search" class="form-control">
+            <li ><a href="./home.php">Home</a></li>
+            <li class="active"><a href="./login.php">Log In</a></li>
+            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
+            <div class="form-group" >
+              <input type="text" placeholder="Search" name="search">
             </div>
             <button type="submit" class="btn btn-warning">Search</button>
           </form></li>
@@ -68,8 +67,8 @@ if (!isset($_POST["submit_b"])){
 
       <form class=\"form-signin\" role=\"form\" action=".$_SERVER['PHP_SELF']." method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
-        <input type=\"text\" name=\"username_\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
-        <input type=\"password\" name=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
+        <input type=\"text\" name=\"username_\" id=\"username_\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
+        <input type=\"password\" name=\"password_\" id=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
         <div class=\"checkbox\">
           <label>
             <input type=\"checkbox\" value=\"remember-me\"> Remember me
@@ -87,27 +86,23 @@ if (!isset($_POST["submit_b"])){
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
  
-  $username = $_POST["username_"];
-  $password = $_POST["password_"];
+  $username = $_POST['username_'];
+  $password = $_POST['password_'];
 
 
-  $result = mysql_query("SELECT * from users where userId = $username;")
+  $result = mysql_query("SELECT * from users where userId like '$username' and password like '$password'")
       or die(mysql_error()); 
   $result_array = mysql_num_rows($result);
-  if (sizeof($result_array) != 1) {
+  if ($result_array != 1) {
     echo "<p>Invalid username/password combination</p>";
+    header("Location: ./login.php");
   } else {
-    echo "<p>".$result.$result_array."</p>";
+    header("Location: ./mentee.php?id=".$username."");
       
 $cookie_name = "Auth";
 $cookie_value = $username;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie named '" . $cookie_name . "' does not exist!";
-} else {
-    echo "Cookie is named: " . $cookie_name . "<br>Value is: " . $_COOKIE[$cookie_name];
-}
   }
 }
 ?>
