@@ -33,11 +33,11 @@ function initialize() {
 
   geocoder = new google.maps.Geocoder();
   var mapOptions = {
-    zoom: 1,
+    zoom: 8,
     center: new google.maps.LatLng(0, 0),
 disableDefaultUI: true,
 mapTypeControl: false,
-      draggable: false,
+      draggable: true,
       scaleControl: false,
       scrollwheel: false,
         disableDoubleClickZoom: true,
