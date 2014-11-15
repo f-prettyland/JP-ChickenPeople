@@ -67,9 +67,11 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
 
-  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees")
+  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees;")
       or die(mysql_error()); 
   while(($row = mysql_fetch_assoc($result)) != NULL) {
+
+    echo "<p> Hello! </p>"
 
     geocoder.geocode( { 'address': "".$row['city'].", ".$row['country'].""}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
