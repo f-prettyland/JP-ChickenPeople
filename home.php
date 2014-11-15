@@ -77,7 +77,7 @@ $username = $row['menteeId'];
 $photo = $row['picName'];
 ?>
 
-var image = <?php echo "\"./photos/".$photo."\""; ?>;
+var image = <?php echo "\"".$photo."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
@@ -87,7 +87,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: image,
+            icon: "./photos/" + image,
 
             position: results[0].geometry.location
         });
