@@ -37,17 +37,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./home.html">Cherie Blaire Project Network</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-<ul class="nav navbar-nav">
-            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="200"></li>
+          <ul class="nav navbar-nav">
+            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-            <li><a href="./home.html">Home</a></li>
-            <li class="active"><a href="./login.html">Log In</a></li>
-            <li><form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="search" class="form-control">
+            <li ><a href="./home.php">Home</a></li>
+            <li class="active"><a href="./login.php">Log In</a></li>
+            <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <div class="form-group" >
+              <input type="text" placeholder="Search" name="search">
             </div>
             <button type="submit" class="btn btn-warning">Search</button>
           </form></li>
@@ -104,11 +103,6 @@ $cookie_name = "Auth";
 $cookie_value = $username;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie named '" . $cookie_name . "' does not exist!";
-} else {
-    echo "Cookie is named: " . $cookie_name . "<br>Value is: " . $_COOKIE[$cookie_name];
-}
   }
 }
 ?>

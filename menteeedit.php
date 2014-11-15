@@ -34,9 +34,19 @@
     $dbhandle = mysql_connect($hostname, $username, $password) 
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
-    $id = $_GET['id'];
+    
+    $cookie_name = "Auth";
+    if(!isset($_COOKIE[$cookie_name])) {
+           echo "Cookie named '" . $cookie_name . "' does not exist!";
+    } else {
+           $id = $_COOKIE[$cookie_name];
+    }
+
+    //$id = $_GET['id'];
     $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
     or die(mysql_error());  
+
+   
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
@@ -53,19 +63,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./home.html">Cherie Blaire Project Network</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="200"></li>
+            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-            <li class="active"><a href="./home.html">Home</a></li>
-            <li><a href="./login.html">Log In</a></li>
-            <li><form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="search" class="form-control">
+            <li><a href="./home.php">Home</a></li>
+            <li ><a href="./login.php">Log In</a></li>
+            <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <div class="form-group" >
+              <input type="text" placeholder="Search" name="search">
             </div>
-            <button type="submit"class="btn btn-warning">Search</button>
+            <button type="submit" class="btn btn-warning">Search</button>
           </form></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -89,31 +98,31 @@
               <h3 class="panel-title" >Your details</h3>
             </div>
             <div class="panel-body">
-             City: 
+             City:<br>
               <input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Country:  
+              Country:<br>
               <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Product: 
+              Product:<br>
               <input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Tag:  
+              Tag:<br>
               <input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Gmail:  
+              Gmail:<br>
               <input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Phone Number:  
+              Phone Number:<br>
               <input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Do you want your contact details to remain private?
+              Do you want your contact details to remain private?<br>
               <input type="checkbox" name="option3" value="Cheese">Protect my data<br> 
             </div>
           </div>
