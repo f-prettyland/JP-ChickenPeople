@@ -70,6 +70,16 @@
       mysql_query("UPDATE mentees SET phone='".$phone."' WHERE menteeId = '".$id."';");
       mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
 
+
+      //$id = $_GET['id'];
+      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
+      or die(mysql_error());  
+
+      // store the record of the "example" table into $row
+      $row = mysql_fetch_array( $result );
+      // Print out the contents of the entry 
+
+
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -110,7 +120,7 @@
 </ul>
 </br>
 <div class="row">
-  <form method="post" action="menteeedit.php">
+  <form method="post" action="editland.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">

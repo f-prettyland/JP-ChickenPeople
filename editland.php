@@ -61,14 +61,6 @@
       mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
 
 
-      //$id = $_GET['id'];
-      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
-      or die(mysql_error());  
-
-      // store the record of the "example" table into $row
-      $row = mysql_fetch_array( $result );
-      // Print out the contents of the entry 
-
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -102,11 +94,6 @@
     <div class="container">
 </br>
 </br>
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Timeline</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
 </br>
 <div class="row">Thanks for editing!</div>
 
