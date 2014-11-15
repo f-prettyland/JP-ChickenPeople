@@ -10,19 +10,23 @@ CREATE TABLE `mentees` (
   `city` varchar(50),
   `country` varchar(50),
   `product` varchar(50),
-  `story` varchar(1000),
   `tag` varchar(50),
   `gmail` varchar(50),
   `phone` varchar(50),
   `privacyBit` int(2),
   `picName` varchar(50),
-  PRIMARY KEY (`menteeId`)
+  `story` varchar(2000),
+  PRIMARY KEY (`menteeId`),
+  FOREIGN KEY (`menteeId`) REFERENCES users(`userId`)
 );
+
+DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `userId` varchar(100),
   `password` varchar(50),
-  PRIMARY KEY (`userId`)
+  PRIMARY KEY (`userId`),
+  FOREIGN KEY (`userId`) REFERENCES mentees(`menteeId`)
 );
 
 
