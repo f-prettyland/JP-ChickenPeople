@@ -60,13 +60,13 @@
       $story = $_GET['story'];
 
       if($city != NULL){
-      mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
-      #mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
-      #mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
-      #mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
-      #mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
-      #mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
-      #mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
+        mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
       }
       
 
@@ -113,7 +113,7 @@
 </ul>
 </br>
 <div class="row">
-  <form method="get" action="menteeedit.php">
+  <form method="get" action="/menteeedit.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
