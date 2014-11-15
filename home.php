@@ -75,6 +75,7 @@ $city = $row['city'];
 $country = $row['country'];
 ?>
 
+var image = <?php $stringPic =  "\"./photos/".$row['picName']."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 
@@ -82,13 +83,13 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
+            icon: image,
 
             position: results[0].geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "beep";
+    document.getElementById("other-stuff").innerHTML = "";
     });
       }
     });
