@@ -92,10 +92,10 @@ if (!isset($_POST["submit_b"])){
 
   echo $username;
   echo $password;
-  echo sizeof(users);
 
   $result = mysql_query("SELECT * from users where userId = $username and password = $password limit 1;")
       or die(mysql_error()); 
+  echo $result;
   $result_array = mysql_fetch_array($result);
   if (sizeof($result_array) != 1) {
     echo "<p>Invalid username/password combination</p>";
