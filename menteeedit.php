@@ -105,10 +105,12 @@ Gmail:<br>
 Phone Number:<br>
 <input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="40">
  <button type="button">Click Me!</button> 
+<br>
 Do you want your contact details to remain private?<br>
 <input type="checkbox" name="option3" value="Cheese"> Cheese<br> 
 Story<br>
-<input type="text" name="story" value=<?php echo "\"".$row['story']."\""; ?> size="100">
+<textarea rows="30" cols="200" name="story">
+<?php echo "\"".$row['story']."\""; ?></textarea>
  <button type="button">Click Me!</button> 
 </div><!-- /.container -->
 
