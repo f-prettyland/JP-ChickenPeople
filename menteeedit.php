@@ -83,7 +83,7 @@
 </br>
 
 <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
@@ -92,8 +92,7 @@
               Panel content
             </div>
           </div>
-        <div class="col-sm-5">
-          <div class="panel panel-default">
+           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
             </div>
@@ -101,7 +100,6 @@
               Panel content
             </div>
           </div>
-        </div><!-- /.col-sm-4 -->
       </div>
     </div>
 
