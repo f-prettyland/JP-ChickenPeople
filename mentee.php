@@ -46,7 +46,9 @@
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
-    $bro = mysql_fetch_array( $timelines );
+    $bros = array();
+    while($bro = mysql_fetch_array($timelines))
+      $bros[] = $bro;
     var_dump($bro);
     // Print out the contents of the entry 
 
@@ -137,7 +139,11 @@
 
   	<div role="tabpanel" class="tab-pane fade" id="timeline">
   		 <!-- TIMELINE STUFF STARTS HERE-->
-
+<?php
+              foreach($bros as $bro){ 
+                var_dump($bro);
+              }
+                ?>
   		  <div class="container">
 
         </div>
