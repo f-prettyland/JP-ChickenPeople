@@ -91,7 +91,7 @@ if (!isset($_POST["submit_b"])){
   $password = $_POST['password_'];
 
 
-  $result = mysql_query("SELECT * from users where userId like $username and password like $password")
+  $result = mysql_query("SELECT * from users where userId like '$username' and password like '$password'")
       or die(mysql_error()); 
   $result_array = mysql_num_rows($result);
   echo "<p>".sizeof($result_array)."</p>";
