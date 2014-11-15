@@ -42,7 +42,6 @@ CREATE TABLE `timeline` (
   `photo4` varchar(50),
   `photo5` varchar(50),
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`userId`) REFERENCES mentees(`menteeId`);
 );
 
 
@@ -50,6 +49,7 @@ CREATE TABLE `timeline` (
 DELETE FROM mentees;
 
 DELETE FROM users;
+DELETE FROM timeline;
 
 # load new records into 
 LOAD DATA LOCAL INFILE 'menteeinfo.txt' INTO TABLE mentees;
