@@ -35,7 +35,7 @@
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
-    $result = mysql_query("SELECT * FROM mentees where menteeId = $_GET["id"];")
+    $result = mysql_query("SELECT * FROM mentees where menteeId = $_GET['id'];")
     or die(mysql_error());  
 
     // store the record of the "example" table into $row
