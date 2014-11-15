@@ -68,8 +68,8 @@ if (!isset($_POST["submit_b"])){
 
       <form class=\"form-signin\" role=\"form\" action=".$_SERVER['PHP_SELF']." method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
-        <input type=\"text\" id=\"username_\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
-        <input type=\"password\" id=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
+        <input type=\"text\" name=\"username_\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
+        <input type=\"password\" name=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
         <div class=\"checkbox\">
           <label>
             <input type=\"checkbox\" value=\"remember-me\"> Remember me
@@ -90,7 +90,7 @@ if (!isset($_POST["submit_b"])){
   $username = $_POST["username_"];
   $password = $_POST["password_"];
  
-  $result = mysql_query("SELECT * from users where userId = $username;")
+  $result = mysql_query("SELECT * from users where userId = $username and password=$password;")
       or die(mysql_error()); 
   $result_array = mysql_fetch_array($result);
   if (sizeof($result_array) != 1) {
