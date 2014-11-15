@@ -62,7 +62,7 @@
 
 
 <?php
-if (!isset($_POST['submit'])){
+if (!isset($_POST["submit_b"])){
 
    echo "<div class=\"container\">
 
@@ -75,7 +75,7 @@ if (!isset($_POST['submit'])){
             <input type=\"checkbox\" value=\"remember-me\"> Remember me
           </label>
         </div>
-        <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
+        <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" name=\"submit_b\" id=\"submit_b\" value=\"Login\">Log in</button>
       </form>";}
 
       else {
