@@ -72,37 +72,37 @@
 <?php
            while ($row = mysql_fetch_array($result)) {
             $stringPic =  "\"./photos/".$row['picName']."\"";
- echo "<div class=\"panel panel-success\">
-            <div class=\"panel-heading\" style=\"background-color:#F5DA81; color:#FE9A2E\">
-              <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 0.5px #1C1C1C;\"> <font size=\"5\">".$row[menteeName]."</font> </h1>
-            </div>
-            <div class=\"panel-body\">
-              <div class=\"row clearfix\">
-        <div class=\"col-md-3 column\" style=\"background-color:#F5DA81\">
-          <h4>
-            <center>
-            </br>
-              <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">
-                <img alt=\"140x140\" src=".$stringPic." class=\"img-rounded\" />
-              </h1>
-            </br></br>
-            </center>
-          </h4>
-        </div>
-        <div class=\"col-md-4 column\">
-          <h4>
-             <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">
-                <font size=\"4\" color=\"#FE9A2E\">Product:</font>".$row[product]."
-             </h1>
-           </br>
-             <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">
-              <font size=\"4\" color=\"#FE9A2E\">Location: </font>".$row[country]."
-            </h1>
-          </h4>
-        </div>
-      </div>
-            </div>
-          </div>"
+ echo "<div class=\"panel panel-success\">";
+      echo "      <div class=\"panel-heading\" style=\"background-color:#F5DA81; color:#FE9A2E\">";
+      echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 0.5px #1C1C1C;\"> <font size=\"5\">".$row[menteeName]."</font> </h1>";
+      echo "      </div>";
+      echo "      <div class=\"panel-body\">";
+      echo "        <div class=\"row clearfix\">";
+      echo "  <div class=\"col-md-3 column\" style=\"background-color:#F5DA81\">";
+      echo "    <h4>";
+      echo "      <center>";
+      echo "      </br>";
+      echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">";
+      echo "          <img alt=\"140x140\" src=".$stringPic." class=\"img-rounded\" />";
+      echo "        </h1>";
+      echo "      </br></br>";
+      echo "      </center>";
+      echo "    </h4>";
+      echo "  </div>";
+      echo "  <div class=\"col-md-4 column\">";
+      echo "    <h4>";
+      echo "       <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">";
+      echo "          <font size=\"4\" color=\"#FE9A2E\">Product:</font>".$row[product]."";
+      echo "       </h1>";
+      echo "     </br>";
+      echo "       <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">";
+      echo "        <font size=\"4\" color=\"#FE9A2E\">Location: </font>".$row[country];
+      echo "      </h1>";
+      echo "    </h4>";
+      echo "  </div>";
+      echo "</div>";
+      echo "      </div>";
+      echo "    </div>";
 ?>
 </div>
 
