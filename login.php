@@ -77,9 +77,10 @@ if (!isset($_POST['submit'])){
         </div>
         <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
       </form>";
-      echo "<p> Helloooo! </p>";}
 
       else {
+
+      echo "<p> In submit! </p>";}
 
   require_once("db_const.php");
 
@@ -88,13 +89,6 @@ if (!isset($_POST['submit'])){
 
     mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
-
-  $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-  # check connection
-  if ($mysqli->connect_errno) {
-    echo "<p>MySQL error no {$mysqli->connect_errno} : {$mysqli->connect_error}</p>";
-    exit();
-  }
  
   $username = $_POST['username'];
   $password = $_POST['password'];
