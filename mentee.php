@@ -142,7 +142,7 @@
               foreach($bros as $bro){ 
                 foreach($bro as $brow){
                    echo "<h2 class=\"blog-post-title\">".$brow['title']."</h2>";
-                echo "<p class=\"blog-post-meta\">".$brow['date']." by".$row['menteeName']"</p>";
+                echo "<p class=\"blog-post-meta\">".$brow['date']." by ".$row['menteeName']."</p>";
                 echo "<p>".$brow['description']."</p>";
                 }
               }
