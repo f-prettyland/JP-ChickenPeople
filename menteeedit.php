@@ -90,6 +90,7 @@
 </br>
 </div>
 <div class="row">
+  <form form action="updates.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
@@ -97,7 +98,6 @@
             </div>
             <div class="panel-body">
              City:<br>
-              <form>
                 <input type="text" id="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
               <br>
               Country:<br>
@@ -118,9 +118,9 @@
               Phone Number:<br>
               <input type="text" id="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <br>
-               <button type="button" class="btn btn-sm btn-warning" action="updates.php" method="get">Submit Changes</button> 
+               <input type="submit" value="Submit Changes">
               <br>
-            </form>
+          
             </div>
           </div>
       </div>
@@ -132,10 +132,10 @@
             <div class="panel-body">
               <textarea rows="15" cols="60" id="story">
               <?php echo "\"".$row['story']."\""; ?></textarea>
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
             </div>
           </div>
       </div>
+        </form>
     </div>
 
 
