@@ -68,8 +68,8 @@ if (!isset($_POST["submit_b"])){
 
       <form class=\"form-signin\" role=\"form\" action=".$_SERVER['PHP_SELF']." method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
-        <input type=\"text\" name=\"username_\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
-        <input type=\"password\" name=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
+        <input type=\"text\" name=\"username_\" id=\"username_\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
+        <input type=\"password\" name=\"password_\" id=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
         <div class=\"checkbox\">
           <label>
             <input type=\"checkbox\" value=\"remember-me\"> Remember me
@@ -87,11 +87,11 @@ if (!isset($_POST["submit_b"])){
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
  
-  $username = $_POST["username_"];
-  $password = $_POST["password_"];
+  $username = $_POST['username_'];
+  $password = $_POST['password_'];
 
 
-  $result = mysql_query("SELECT * from users where userId = $username and password = '$password'")
+  $result = mysql_query("SELECT * from users where userId like $username and password like $password")
       or die(mysql_error()); 
   $result_array = mysql_num_rows($result);
   echo "<p>".sizeof($result_array)."</p>";
