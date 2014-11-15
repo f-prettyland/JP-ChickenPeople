@@ -44,7 +44,7 @@
 
             <li ><a href="./home.php">Home</a></li>
             <li class="active"><a href="./login.php">Log In</a></li>
-            <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>

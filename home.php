@@ -85,17 +85,16 @@ var mentee = <?php echo "\"".$username."\""; ?>;
 var name<?php echo $username ?> = <?php echo "\"".$name."\""; ?>;
 var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
 
-var icon<?php echo $username ?> = new google.maps.MarkerImage(
-            "./photos/Small-triangle-black.jpg">, //url
-            new google.maps.Size(40, 40), //size 
-            new google.maps.Point(0,0)
-    );
+// var icon<?php echo $username ?> = new google.maps.MarkerImage(
+//             "./photos/Small-triangle-black.jpg">, //url
+//             new google.maps.Size(40, 40), //size 
+//             new google.maps.Point(0,0)
+//     );
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: icon<?php echo $username ?> ,
 
             position: results[0].geometry.location
         });
