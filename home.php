@@ -33,13 +33,13 @@ function initialize() {
 
   geocoder = new google.maps.Geocoder();
   var mapOptions = {
-    zoom: 1,
+    zoom: 2,
     center: new google.maps.LatLng(0, 0),
 disableDefaultUI: true,
 mapTypeControl: false,
-      draggable: false,
-      scaleControl: false,
-      scrollwheel: false,
+      draggable: true,
+      scaleControl: true,
+      scrollwheel: true,
         disableDoubleClickZoom: true,
       navigationControl: false,
       streetViewControl: false,
@@ -84,22 +84,18 @@ var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
 var name<?php echo $username ?> = <?php echo "\"".$name."\""; ?>;
 var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
-var image_ = {url: "./photos/" + image<?php echo $username ?>,
-              // This marker is 20 pixels wide by 32 pixels tall.
-              size: new google.maps.Size(20, 32),
-              };
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: image_,
+            icon: "./photos/" + image<?php echo $username ?> ,
 
             position: results[0].geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h3 style=\"colour:orange\"> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
+    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
       }
     });
 <?php
@@ -160,10 +156,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
       <div class="starter-template">
         <h1>Empowering women, creating connections</h1>
-        <p class="lead">Some text describing the project.</p>
-     <div id="other-stuff">
+        <p class="lead">A network for corageous femail enterpreneurs from various backgrounds.</p>
       </div>
-
+     <div id="other-stuff">
       <h3><br></h3>
     </div>
     </div><!-- /.container -->

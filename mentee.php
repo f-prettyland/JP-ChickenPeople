@@ -144,16 +144,12 @@
                 echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
                 echo "<p class=\"blog-post-meta\">".$bro['date']." by ".$row['menteeName']."</p>";
                 echo "<p>".$bro['description']."</p>";
-                if($bro.['photo1']!== NULL){
-                  var_dump($bro.['photo1']);
-                  if($bro.['photo2']!== NULL){
-
-                  var_dump($bro.['photo2']);
-                    if($bro.['photo3']!== NULL){
-
-                  var_dump($bro.['photo3']);
-                      if($bro.['photo4']!== NULL){
-                         if($bro.['photo5']!== NULL){
+                echo "<p>".$bro['photo1']."</p>";
+                if($bro['photo1']!== NULL){
+                  if($bro['photo2']!== NULL){
+                    if($bro['photo3']!== NULL){
+                      if($bro['photo4']!== NULL){
+                         if($bro['photo5']!== NULL){
                               $i =5;              
                           }else{
                             $i =4; 
@@ -179,7 +175,7 @@
                     echo "        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>";
                     echo "      <div class=\"carousel-inner\" role=\"listbox\">";
                   echo "        <div class=\"item active\">";
-                  echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+                  echo "          <img src=\"/events/".$bro['photo1']." \" alt=\"First slide\">";
                   echo "          <div class=\"container\">";
                   echo "          </div>";
                   echo "        </div>";
@@ -194,12 +190,12 @@ echo "        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>";
 echo "      </ol>";
 echo "      <div class=\"carousel-inner\" role=\"listbox\">";
 echo "        <div class=\"item active\">";
-echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <img src=\"/events/".$bro['photo1']." \" alt=\"First slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <img src=\"/events/".$bro['photo2']."\" alt=\"Second slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
@@ -223,17 +219,17 @@ echo "        <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>";
 echo "      </ol>";
 echo "      <div class=\"carousel-inner\" role=\"listbox\">";
 echo "        <div class=\"item active\">";
-echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <img src=\"/events/".$bro['photo1']." \" alt=\"First slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <img src=\"/events/".$bro['photo2']."\" alt=\"Second slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo3']."\" alt=\"Third slide\">";
+echo "          <img src=\"/events/".$bro['photo3']."\" alt=\"Third slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
@@ -258,22 +254,22 @@ echo "        <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>";
 echo "      </ol>";
 echo "      <div class=\"carousel-inner\" role=\"listbox\">";
 echo "        <div class=\"item active\">";
-echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <img src=\"/events/".$bro['photo1']." \" alt=\"First slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <img src=\"/events/".$bro['photo2']."\" alt=\"Second slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo3']."\" alt=\"Third slide\">";
+echo "          <img src=\"/events/".$bro['photo3']."\" alt=\"Third slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo4']."\" alt=\"Third slide\">";
+echo "          <img src=\"/events/".$bro['photo4']."\" alt=\"Third slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
@@ -299,27 +295,27 @@ echo "        <li data-target=\"#myCarousel\" data-slide-to=\"4\"></li>";
 echo "      </ol>";
 echo "      <div class=\"carousel-inner\" role=\"listbox\">";
 echo "        <div class=\"item active\">";
-echo "          <img src=\"".$bro.['photo1']." \" alt=\"First slide\">";
+echo "          <img src=\"/events/".$bro['photo1']." \" alt=\"First slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo2']."\" alt=\"Second slide\">";
+echo "          <img src=\"/events/".$bro['photo2']."\" alt=\"Second slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo3']."\" alt=\"Third slide\">";
+echo "          <img src=\"/events/".$bro['photo3']."\" alt=\"Third slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo4']."\" alt=\"Third slide\">";
+echo "          <img src=\"/events/".$bro['photo4']."\" alt=\"Third slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
 echo "        <div class=\"item\">";
-echo "          <img src=\"".$bro.['photo5']."\" alt=\"Third slide\">";
+echo "          <img src=\"/events/".$bro['photo5']."\" alt=\"Third slide\">";
 echo "          <div class=\"container\">";
 echo "          </div>";
 echo "        </div>";
