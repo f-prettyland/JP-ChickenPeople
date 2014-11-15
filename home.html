@@ -59,10 +59,6 @@ mapTypeControl: false,
 map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 
 <?php
-if (!isset($_POST["submit_b"])){
-
-
-  else {
 
     $hostname = "localhost";
     $username = "root";
@@ -70,35 +66,33 @@ if (!isset($_POST["submit_b"])){
     $dbhandle = mysql_connect($hostname, $username, $password_serv) 
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
- 
-  $username = $_POST['username_'];
-  $password = $_POST['password_'];
 
-
-  $result = mysql_query("SELECT * from users where userId like '$username' and password like '$password'")
+  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees")
       or die(mysql_error()); 
-  $result_array = mysql_num_rows($result);
+  while(($row = mysql_fetch_assoc($result)) != NULL) {
 
+    geocoder.geocode( { 'address': "".$row['city'].", ".$row['country'].""}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                #icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
 
-  }
+                position: results[0].geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+        // Set the info window's content and position.
+        document.getElementById("other-stuff").innerHTML = "beep";
+        });
+          }
+        });
+
+}
+
 }
 ?>
 
-geocoder.geocode( { 'address': "London, UK"}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map,
-            icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
 
-            position: results[0].geometry.location
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-    // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "beep";
-    });
-      }
-    });
 
     
 
