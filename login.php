@@ -89,6 +89,9 @@ if (!isset($_POST["submit_b"])){
  
   $username = $_POST["username_"];
   $password = $_POST["password_"];
+
+  echo $username;
+  echo $password;
  
   $result = mysql_query("SELECT * from users where userId = $username and password = $password limit 1;")
       or die(mysql_error()); 
