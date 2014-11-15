@@ -55,7 +55,7 @@
             <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="300"></li>
 
             <li><a href="./home.html">Home</a></li>
-            <li class="active"><a href="./login.html">Log In</a></li>
+            <li><a href="./login.html">Log In</a></li>
             <li><form class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input type="text" placeholder="search" class="form-control">
@@ -81,11 +81,9 @@
       echo "  <div class=\"col-md-3 column\" style=\"background-color:#F5DA81\">";
       echo "    <h4>";
       echo "      <center>";
-      echo "      </br>";
       echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">";
       echo "          <img alt=\"140x140\" src=".$stringPic." class=\"img-rounded\" />";
       echo "        </h1>";
-      echo "      </br></br>";
       echo "      </center>";
       echo "    </h4>";
       echo "  </div>";
