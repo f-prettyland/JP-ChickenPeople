@@ -64,23 +64,21 @@
 <?php
   echo "<p>Got somewhere</p>";
 if (!isset($_POST['submit'])){
-?>
-<!-- The HTML login form -->
-    <div class="container">
 
-      <form class="form-signin" role="form" action="<?=$_SERVER['PHP_SELF']?>" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" id="username" class="form-control" placeholder="Username" method="post" action="checklogin.php" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" method="post" action="checklogin.php"required>
-        <div class="checkbox">
+<!-- The HTML login form -->
+   echo "<div class=\"container\">
+
+      <form class=\"form-signin\" role=\"form\" action=\"$_SERVER['PHP_SELF']\" method=\"post\">
+        <h2 class=\"form-signin-heading\">Please sign in</h2>
+        <input type=\"text\" id=\"username\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
+        <input type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\"required>
+        <div class=\"checkbox\">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type=\"checkbox\" value=\"remember-me\"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-warning btn-block" type="submit" value="Login">Log in</button>
-      </form>
-
-<?php
+        <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
+      </form>"
 } else {
 
   require_once("db_const.php");
