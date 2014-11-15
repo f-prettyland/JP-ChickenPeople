@@ -82,14 +82,18 @@ if (!isset($_POST["submit_b"])){
 
   require_once("db_const.php");
 
-    $dbhandle = mysql_connect(DB_HOST, DB_USER, DB_PASS) 
+    $hostname = "localhost";
+    $username = "root";
+    $password = "cfg2014!";
+
+    $dbhandle = mysql_connect($hostname, $username, $password) 
       or die("Unable to connect to MySQL");
 
     mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
  
   $username = $_POST['username'];
-  $password = $_POST['password_'];
+  $password__ = $_POST['password_'];
  
   $result = mysql_query("SELECT * from users where userId = $username;")
       or die(mysql_error());  
