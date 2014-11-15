@@ -38,11 +38,15 @@
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
     $id = $_GET['id'];
-    $result = mysql_query("SELECT * FROM mentees join timeline using (mentees.menteeId = timeline.userId) where menteeId = $id;")
+    $result = mysql_query("SELECT * FROM mentees  where menteeId = $id;")
+    or die(mysql_error());  
+
+    $timelines = mysql_query("SELECT * FROM timeline where userId = $id ORDER BY `id` DESC;")
     or die(mysql_error());
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
+    $bro = mysql_fetch_array( $result );
     // Print out the contents of the entry 
 
     ?>
