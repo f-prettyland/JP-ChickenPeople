@@ -80,7 +80,6 @@ var country_name = <?php echo "\"".$country."\""; ?>;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
             map: map,
             icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
@@ -96,6 +95,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
 <?php
 }
 ?>
+    map.setCenter(0,0);
 
 }
 
