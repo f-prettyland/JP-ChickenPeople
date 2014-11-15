@@ -143,7 +143,7 @@
 
   		  <div class="container">
 			
-</div>
+        </div>
   		
 	 	 <!-- TIMELINE STUFF ENDS HERE-->
   	</div>
@@ -152,30 +152,33 @@
   	<div role="tabpanel" class="tab-pane fade" id="Contact">
 		<!-- CONTACT STUFF STARTS HERE-->
 
-		<form class="cmxform" id="commentForm" method="get" action="">
-  <fieldset>
-    <legend>Please provide your name, email address (won't be published) and a comment</legend>
-    <p>
-      <label for="cname">Name (required, at least 2 characters)</label>
-      <input id="cname" name="name" minlength="2" type="text" required/>
-    </p>
-    <p>
-      <label for="cemail">E-Mail (required)</label>
-      <input id="cemail" type="email" name="email" required/>
-    </p>
-    <p>
-      <label for="curl">URL (optional)</label>
-      <input id="curl" type="url" name="url"/>
-    </p>
-    <p>
-      <label for="ccomment">Your comment (required)</label>
-      <textarea id="ccomment" name="comment" required></textarea>
-    </p>
-    <p>
-      <input class="submit" type="submit" value="Submit"/>
-    </p>
-  </fieldset>
-</form>
+		<div class="row">
+    <div class="col-lg-12">
+        <form action="" method="POST" enctype="multipart/form-data" id="form_id">
+            <div class="form-group">
+                 <h5><label for="inputName">Name</label></h5>
+
+                <input type="text" name="career[name]" class="form-control" tabindex="1" placeholder="Enter your name" pattern="[a-zA-Z. ]{1,50}" required>
+            </div>
+            <div class="form-group">
+                 <h5><label for="inputEmail">Email</label></h5>
+
+                <input type="email" name="career[email]" class="form-control" tabindex="2" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                 <h5><label for="inputMobile">Mobile</label></h5>
+
+                <input type="tel" name="career[mobile]" class="form-control" tabindex="3" placeholder="Enter your mobile number" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+            <div class="form-group">
+                 <h5><label for="inputMessage">Message</label></h5>
+
+                <input type="text" name="career[message]" class="form-control" tabindex="4" placeholder="Write your details" required>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary btn-block" tabindex="5">Submit</button>
+        </form>
+    </div>
+</div>
 
 		<!-- CONTACT STUFF ENDS HERE-->
 
