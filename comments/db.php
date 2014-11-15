@@ -14,9 +14,9 @@ You may not rent, lease, or otherwise receive any compensation for this script..
 
 //Please set the following variables for your mysql database:
 $db_hostname = "localhost";  //usually "localhost be default"
-$db_username = "";  //your user name
-$db_pass = "";  //the password for your user
-$db_name = "";  //the name of the database
+$db_username = "root";  //your user name
+$db_pass = "cfg2014!";  //the password for your user
+$db_name = "date";  //the name of the database
 
 
 /*MYSQL DATABASE CONNECTION/ TRACKING FUNCTIONS
