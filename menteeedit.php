@@ -49,11 +49,7 @@
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
     // Print out the contents of the entry 
-
-  
-    $val= $_GET['search'];
-    $result = mysql_query("UPDATE mentees SET $item=$val where menteeId = $id;");
-
+   
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
