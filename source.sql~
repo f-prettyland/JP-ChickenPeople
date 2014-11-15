@@ -10,10 +10,12 @@ CREATE TABLE `mentees` (
   `city` varchar(50),
   `country` varchar(50),
   `product` varchar(50),
+  `story` varchar(1000),
   `tag` varchar(50),
   `gmail` varchar(50),
   `phone` varchar(50),
   `privacyBit` int(2),
+  `picName` varchar(50),
   PRIMARY KEY (`menteeId`)
 );
 
@@ -26,6 +28,8 @@ CREATE TABLE `users` (
 
 # empty the table
 DELETE FROM mentees;
+
+DELETE FROM users;
 
 # load new records into it
 LOAD DATA LOCAL INFILE 'menteeinfo.txt' INTO TABLE mentees;
