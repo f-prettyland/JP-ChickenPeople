@@ -58,25 +58,43 @@ mapTypeControl: false,
 
 map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 
-geocoder.geocode( { 'address': "London, UK"}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
-      }
-    });
+<?php
 
-  var marker1 = new google.maps.Marker({
-    position: new google.maps.LatLng(-25.363882, 131.044922),
-    icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
-    map: map
-  });
-    google.maps.event.addListener(marker1, 'click', function() {
-    // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "beep";
-    });
+    $hostname = "localhost";
+    $username = "root";
+    $password_serv = "cfg2014!";
+    $dbhandle = mysql_connect($hostname, $username, $password_serv) 
+      or die("Unable to connect to MySQL");
+    mysql_select_db("data") or die(mysql_error());
+
+  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees")
+      or die(mysql_error()); 
+  while(($row = mysql_fetch_assoc($result)) != NULL) {
+
+    geocoder.geocode( { 'address': "".$row['city'].", ".$row['country'].""}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                #icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
+
+                position: results[0].geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+        // Set the info window's content and position.
+        document.getElementById("other-stuff").innerHTML = "beep";
+        });
+          }
+        });
+
+}
+
+}
+?>
+
+
+
+    
 
 
   var marker2 = new google.maps.Marker({
@@ -126,8 +144,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
           <ul class="nav navbar-nav">
             <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-            <li class="active"><a href="./home.php">Home</a></li>
-            <li ><a href="./login.php">Log In</a></li>
+            <li class="active"><a href="./home.html">Home</a></li>
+            <li><a href="./login.html">Log In</a></li>
             <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
@@ -138,6 +156,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
     <div class="container">
 
       <div class="starter-template">

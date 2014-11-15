@@ -58,25 +58,49 @@ mapTypeControl: false,
 
 map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 
+<?php
+if (!isset($_POST["submit_b"])){
+
+
+  else {
+
+    $hostname = "localhost";
+    $username = "root";
+    $password_serv = "cfg2014!";
+    $dbhandle = mysql_connect($hostname, $username, $password_serv) 
+      or die("Unable to connect to MySQL");
+    mysql_select_db("data") or die(mysql_error());
+ 
+  $username = $_POST['username_'];
+  $password = $_POST['password_'];
+
+
+  $result = mysql_query("SELECT * from users where userId like '$username' and password like '$password'")
+      or die(mysql_error()); 
+  $result_array = mysql_num_rows($result);
+
+
+  }
+}
+?>
+
 geocoder.geocode( { 'address': "London, UK"}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
             map: map,
+            icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
+
             position: results[0].geometry.location
         });
-      }
-    });
-
-  var marker1 = new google.maps.Marker({
-    position: new google.maps.LatLng(-25.363882, 131.044922),
-    icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
-    map: map
-  });
-    google.maps.event.addListener(marker1, 'click', function() {
+        google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
     document.getElementById("other-stuff").innerHTML = "beep";
     });
+      }
+    });
+
+    
 
 
   var marker2 = new google.maps.Marker({
