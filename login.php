@@ -68,7 +68,7 @@ if (!isset($_POST["submit_b"])){
 
       <form class=\"form-signin\" role=\"form\" action=".$_SERVER['PHP_SELF']." method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
-        <input type=\"text\" id=\"username\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
+        <input type=\"text\" id=\"username_\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
         <input type=\"password\" id=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
         <div class=\"checkbox\">
           <label>
@@ -82,16 +82,13 @@ if (!isset($_POST["submit_b"])){
 
     $hostname = "localhost";
     $username = "root";
-    $password = "cfg2014!";
-
-    $dbhandle = mysql_connect($hostname, $username, $password) 
+    $password_serv = "cfg2014!";
+    $dbhandle = mysql_connect($hostname, $username, $password_serv) 
       or die("Unable to connect to MySQL");
-
     mysql_select_db("data") or die(mysql_error());
-    echo "Connected to MySQL<br>";
  
-  $username = $_POST["username"];
-  $password__ = $_POST["password_"];
+  $username = $_POST["username_"];
+  $password = $_POST["password_"];
  
   $result = mysql_query("SELECT * from users where userId = $username;")
       or die(mysql_error()); 
