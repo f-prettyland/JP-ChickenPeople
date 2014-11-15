@@ -90,9 +90,8 @@ if (!isset($_POST["submit_b"])){
  
   $username = $_POST['username'];
   $password = $_POST['password_'];
-
  
-  $result = mysql_query("SELECT * from users WHERE userId = $username AND password = $password;")
+  $result = mysql_query("SELECT * from users where userId = $username;")
       or die(mysql_error());  
   if (!$result->num_rows == 1) {
     echo "<p>Invalid username/password combination</p>";
