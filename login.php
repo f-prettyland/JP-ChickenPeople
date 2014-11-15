@@ -91,13 +91,17 @@ if (!isset($_POST["submit_b"])){
   $password = $_POST["password_"];
 
 
-  $result = mysql_query("SELECT * from users where userId = $username;")
+  $result = mysql_query("SELECT * from users where userId = $username and password = $password")
       or die(mysql_error()); 
   $result_array = mysql_num_rows($result);
+  echo "<p>".sizeof($result_array)."</p>";
+  echo "<p>".var_dump($result_array)."</p>";
   if (sizeof($result_array) != 1) {
     echo "<p>Invalid username/password combination</p>";
+    header("Location: ./login.php");
   } else {
     echo "<p>".$result.$result_array."</p>";
+    header("Location: ./mentee.php?id=".$username."");
       
   }
 }
