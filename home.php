@@ -74,9 +74,8 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 $city = $row['city'];
 $country = $row['country'];
 $username = $row['menteeId'];
-$username = $row['product'];
 $photo = $row['picName'];
-$name = $row['menteeName'];
+$name = $row['menteeName']
 ?>
 
 var image<?php echo $username ?> = <?php echo "\"".$photo."\""; ?>;
@@ -101,7 +100,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"./mentee.php?id=" + web_location<?php echo $username ?> +"\"><img alt=\"140x140\" src= \"./photos/" + image<?php echo $username ?>+"\" class=\"img-rounded\" /></a> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a> "++"</h3>"});
+    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"./mentee.php?id=" + web_location<?php echo $username ?> +"\"><img alt=\"140x140\" src= \"./photos/" + image<?php echo $username ?>+"\" class=\"img-rounded\" /></a> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
       }
     });
 <?php
