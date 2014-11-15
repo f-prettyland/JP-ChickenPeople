@@ -106,11 +106,11 @@
               <br>
               Country:<br>
               <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+               <button type="button" class="btn btn-sm btn-warning" action="<?php echo "\"".$row['product']."\""; ?>" >Modify</button> 
               <br>
               Product:<br>
               <input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+               <button type="button" class="btn btn-sm btn-warning" action=<?php echo "\"".$row['product']."\""; ?> >Modify</button> 
               <br>
               Tag:<br>
               <input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
