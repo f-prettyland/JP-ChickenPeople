@@ -161,7 +161,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
       <div class="starter-template">
         <h1>Empowering women, creating connections</h1>
-        <p class="lead">A network for corageous femail enterpreneurs from various backgrounds.</p>
+        <p class="lead">A network for corageous female enterpreneurs from various backgrounds.</p>
       </div>
      <div id="other-stuff">
       <h3><br></h3>
