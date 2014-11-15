@@ -27,8 +27,12 @@
     mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
     $id = $_GET['id'];
-    $result = mysql_query("SELECT * FROM mentees")
+    $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
     or die(mysql_error());  
+
+    // store the record of the "example" table into $row
+    $row = mysql_fetch_array( $result );
+    // Print out the contents of the entry 
 
     ?>
     <script>
@@ -39,11 +43,12 @@
 
 
 var layer = "watercolor";
-
+var geocoder;
 
 
 function initialize() {
 
+  geocoder = new google.maps.Geocoder();
   var mapOptions = {
     zoom: 1,
     center: new google.maps.LatLng(0, 0),
@@ -67,12 +72,21 @@ mapTypeControl: false,
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-  var geocoder;
-geocoder = new google.maps.Geocoder();
+
 map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
-geocoder.geocode( { 'address': "London"}, function(results, status) { });
+
+geocoder.geocode( { 'address': "London, UK"}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      }
+    });
+
   var marker1 = new google.maps.Marker({
-    position: results[0].geometry.location,
+    position: new google.maps.LatLng(-25.363882, 131.044922),
     icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
     map: map
   });
