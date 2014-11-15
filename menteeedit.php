@@ -34,9 +34,19 @@
     $dbhandle = mysql_connect($hostname, $username, $password) 
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
-    $id = $_GET['id'];
+    
+    $cookie_name = "Auth";
+    if(!isset($_COOKIE[$cookie_name])) {
+           echo "Cookie named '" . $cookie_name . "' does not exist!";
+    } else {
+           $id = $_COOKIE[$cookie_name];
+    }
+
+    //$id = $_GET['id'];
     $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
     or die(mysql_error());  
+
+   
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
@@ -89,31 +99,31 @@
               <h3 class="panel-title" >Your details</h3>
             </div>
             <div class="panel-body">
-             City: 
+             City:<br>
               <input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Country:  
+              Country:<br>
               <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Product: 
+              Product:<br>
               <input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Tag:  
+              Tag:<br>
               <input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Gmail:  
+              Gmail:<br>
               <input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Phone Number:  
+              Phone Number:<br>
               <input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
-              Do you want your contact details to remain private?
+              Do you want your contact details to remain private?<br>
               <input type="checkbox" name="option3" value="Cheese">Protect my data<br> 
             </div>
           </div>
