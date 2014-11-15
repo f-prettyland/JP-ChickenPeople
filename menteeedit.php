@@ -51,16 +51,15 @@
       $gmail= $_POST['gmail'];
       $phone= $_POST['phone'];
       $story = $_POST['story'];
+     
+      mysql_query("UPDATE mentees SET city='".$city."' WHERE menteeId = '".$id."'");
+      mysql_query("UPDATE mentees SET country='".$country."' WHERE menteeId = '".$id."';");
+      mysql_query("UPDATE mentees SET product='".$product."' WHERE menteeId = '".$id."';");
+      mysql_query("UPDATE mentees SET tag='".$tag."' WHERE menteeId = '".$id."';");
+      mysql_query("UPDATE mentees SET gmail='".$gmail."' WHERE menteeId = '".$id."';");
+      mysql_query("UPDATE mentees SET phone='".$phone."' WHERE menteeId = '".$id."';");
+      mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
 
-      if($city != NULL){
-        mysql_query("UPDATE mentees SET city='".$city."' WHERE menteeId = '".$id."'");
-        mysql_query("UPDATE mentees SET country='".$country."' WHERE menteeId = '".$id."';");
-        mysql_query("UPDATE mentees SET product='".$product."' WHERE menteeId = '".$id."';");
-        mysql_query("UPDATE mentees SET tag='".$tag."' WHERE menteeId = '".$id;."'");
-        mysql_query("UPDATE mentees SET gmail='".$gmail."' WHERE menteeId = '".$id."';");
-        mysql_query("UPDATE mentees SET phone='".$phone."' WHERE menteeId = '".$id."';");
-        mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
-      }
 
       //$id = $_GET['id'];
       $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
@@ -70,9 +69,6 @@
       $row = mysql_fetch_array( $result );
       // Print out the contents of the entry 
 
-    
-      
-   
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

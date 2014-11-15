@@ -157,8 +157,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <div class="starter-template">
         <h1>Empowering women, creating connections</h1>
         <p class="lead">Some text describing the project.</p>
-      </div>
      <div id="other-stuff">
+      </div>
+
       <h3><br></h3>
     </div>
     </div><!-- /.container -->
