@@ -78,7 +78,7 @@
       echo "      </div>";
       echo "      <div class=\"panel-body\">";
       echo "        <div class=\"row clearfix\">";
-      echo "  <div class=\"col-md-1 column\" style=\"background-color:#F5DA81\">";
+      echo "  <div class=\"col-md-2 column\" style=\"background-color:#F5DA81\">";
       echo "    <h4>";
       echo "      <center>";
       echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">";
