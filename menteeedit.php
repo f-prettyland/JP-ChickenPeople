@@ -84,10 +84,10 @@
 
 <form action="">
   First name:<br>
-  <input type="text" name="firstname" value="" size="40">
+  <input type="text" name="firstname" value =<?php echo "".$row['product']; ?> size="40">
   <br>
   Last name:<br>
-  <input type="text" name="lastname" value="" >
+  <input type="text" name="lastname" value=<?php echo "".$row['story']; ?> >
 </form>
 
     </div><!-- /.container -->
