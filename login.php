@@ -90,20 +90,14 @@ if (!isset($_POST["submit_b"])){
   $username = $_POST["username_"];
   $password = $_POST["password_"];
 
-  echo $username;
-  echo $password;
 
-  $result = mysql_query("SELECT * from users where userId = $username and password = $password limit 1;")
+  $result = mysql_query("SELECT * from users where userId = $username and password = $password;")
       or die(mysql_error()); 
-  echo $result;
-  $result_array = mysql_fetch_array($result);
-  echo $result_array;
+  $result_array = mysql_num_rows($result);
   if (sizeof($result_array) != 1) {
     echo "<p>Invalid username/password combination</p>";
   } else {
     echo "<p>Logged in successfully</p>";
-    echo $result_array;
-    echo " Hello ";
       
   }
 }
