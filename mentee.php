@@ -145,8 +145,13 @@
                 echo "<p class=\"blog-post-meta\">".$bro['date']." by ".$row['menteeName']."</p>";
                 echo "<p>".$bro['description']."</p>";
                 if($bro.['photo1']!== NULL){
+                  var_dump($bro.['photo1']);
                   if($bro.['photo2']!== NULL){
+
+                  var_dump($bro.['photo2']);
                     if($bro.['photo3']!== NULL){
+
+                  var_dump($bro.['photo3']);
                       if($bro.['photo4']!== NULL){
                          if($bro.['photo5']!== NULL){
                               $i =5;              
