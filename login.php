@@ -93,7 +93,7 @@ if (!isset($_POST["submit_b"])){
   $username = $_POST["username"];
   $password__ = $_POST["password_"];
  
-  $result = mysql_query("SELECT * from users where userId = $username;")
+  $result = mysql_query("SELECT * from users where userId = $username")
       or die(mysql_error()); 
   $result_array = mysql_fetch_array($result);
   if (sizeof($result_array) != 1) {
