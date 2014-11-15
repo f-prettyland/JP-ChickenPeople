@@ -95,8 +95,8 @@ if (!isset($_POST["submit_b"])){
       or die(mysql_error()); 
   $result_array = mysql_num_rows($result);
   echo "<p>".sizeof($result_array)."</p>";
-  echo "<p>".var_dump($result_array)."</p>";
-  if (sizeof($result_array) != 1) {
+  echo "<p>".$result_array."</p>";
+  if ($result_array != 1) {
     echo "<p>Invalid username/password combination</p>";
     header("Location: ./login.php");
   } else {
