@@ -121,27 +121,23 @@ google.maps.event.addDomListener(window, 'load', initialize);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./home.html">Cherie Blaire Project Network</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="200"></li>
+            <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-            <li class="active"><a href="./home.html">Home</a></li>
-            <li><a href="./login.html">Log In</a></li>
-            <li>
-            <form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <li class="active"><a href="./home.php">Home</a></li>
+            <li ><a href="./login.php">Log In</a></li>
+            <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
             <div class="form-group" >
-              <input type="text" placeholder="search" name="search">
+              <input type="text" placeholder="Search" name="search">
             </div>
             <button type="submit" class="btn btn-warning">Search</button>
-          </form>
-        </li>
+          </form></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
     <div class="container">
 
       <div class="starter-template">
