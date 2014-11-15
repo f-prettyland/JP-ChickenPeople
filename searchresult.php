@@ -59,9 +59,6 @@
         if(!isset($_COOKIE[$cookie_name])) {
           <li ><a href="./login.php">Log In</a></li>
         }
-        else{
-          <li ><a href="./logout.php">Logout In</a></li>
-        }
       ?>
             
             <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
