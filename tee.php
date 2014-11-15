@@ -33,6 +33,7 @@
 
     $dbhandle = mysql_connect($hostname, $username, $password) 
       or die("Unable to connect to MySQL");
+    mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
     $result = mysql_query("SELECT * FROM mentees where menteeId = 0")
     or die(mysql_error());  
