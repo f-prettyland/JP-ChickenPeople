@@ -95,8 +95,8 @@
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
-            <input name="update" type="submit" id="update" value="Update">
-            <!--<button type="submit" class="btn btn-warning">Search</button>-->
+           <button type="submit" class="btn btn-warning">Search</button>
+
           </form></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -141,7 +141,7 @@
               Phone Number:<br>
               <input type="text" id="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <br>
-               <input type="submit" value="Submit Changes">
+               <button type="submit" class="btn btn-warning">Submit Changes</button>
               <br>
           
             </div>
