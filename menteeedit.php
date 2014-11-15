@@ -27,28 +27,28 @@
 
   <body>
     <?php
-    $hostname = "localhost";
-    $username = "root";
-    $password = "cfg2014!";
+      $hostname = "localhost";
+      $username = "root";
+      $password = "cfg2014!";
 
-    $dbhandle = mysql_connect($hostname, $username, $password) 
-      or die("Unable to connect to MySQL");
-    mysql_select_db("data") or die(mysql_error());
-    
-    $cookie_name = "Auth";
-    if(!isset($_COOKIE[$cookie_name])) {
-           echo "Cookie named '" . $cookie_name . "' does not exist!";
-    } else {
-           $id = $_COOKIE[$cookie_name];
-    }
+      $dbhandle = mysql_connect($hostname, $username, $password) 
+        or die("Unable to connect to MySQL");
+      mysql_select_db("data") or die(mysql_error());
+      
+      $cookie_name = "Auth";
+      if(!isset($_COOKIE[$cookie_name])) {
+             echo "Cookie named '" . $cookie_name . "' does not exist!";
+      } else {
+             $id = $_COOKIE[$cookie_name];
+      }
 
-    //$id = $_GET['id'];
-    $result = mysql_query("SELECT * FROM mentees where menteeId = $id;");
-    or die(mysql_error());  
+      //$id = $_GET['id'];
+      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;");
+      or die(mysql_error());  
 
-    // store the record of the "example" table into $row
-    $row = mysql_fetch_array( $result );
-    // Print out the contents of the entry 
+      // store the record of the "example" table into $row
+      $row = mysql_fetch_array( $result );
+      // Print out the contents of the entry 
    
     ?>
 
@@ -88,7 +88,7 @@
   <li role="presentation"><a href="#">Messages</a></li>
 </ul>
 </br>
-
+</div>
 <div class="row">
         <div class="col-sm-6">
           <div class="panel panel-default">
