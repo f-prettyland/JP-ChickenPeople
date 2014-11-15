@@ -112,11 +112,12 @@
     <div class="container">
 </br>
 </br>
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Timeline</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Timeline</a></li>
+  </ul>
+
 </br>
 <div class="row">
   <form method="post" action="editland.php">
