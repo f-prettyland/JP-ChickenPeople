@@ -17,6 +17,19 @@ CREATE TABLE `mentees` (
   PRIMARY KEY (`menteeId`)
 );
 
+CREATE TABLE `users` (
+  `userName` varchar(100),
+  `password` varchar(50),
+  PRIMARY KEY (`userName`)
+);
+
+
+insert  into `users`('userName', 'password') 
+values ('a', 'a'),
+('b', 'b'),
+('c', 'c'),
+('d', 'd'));
+
 # empty the table
 DELETE FROM mentees;
 
