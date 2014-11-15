@@ -18,9 +18,9 @@ CREATE TABLE `mentees` (
 );
 
 CREATE TABLE `users` (
-  `userName` varchar(100),
+  `userId` varchar(100),
   `password` varchar(50),
-  PRIMARY KEY (`userName`)
+  PRIMARY KEY (`userId`)
 );
 
 
