@@ -75,11 +75,26 @@
     <div class="container">
 </br>
 </br>
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Timeline</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+  	<div role="tabpanel" class="tab-pane fade in active" id="home">...</div>
+  	<div role="tabpanel" class="tab-pane fade" id="profile">profile</div>
+  	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
+  	<div role="tabpanel" class="tab-pane fade" id="messages">messages</div>
+
+  </div>
+
+</div>
 </br>
 <div class="container">
 	<div class="row clearfix">

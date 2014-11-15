@@ -35,7 +35,7 @@
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
     $searchcrit = $_GET['search'];
-    $result = mysql_query("SELECT * FROM mentees where tag LIKE %$searchcrit% OR city = %$searchcrit% OR menteeName LIKE %$searchcrit% OR country = %$searchcrit%")
+    $result = mysql_query("SELECT * FROM mentees where tag LIKE '%$searchcrit%'")
     or die(mysql_error());  
 
     ?>
