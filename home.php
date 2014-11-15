@@ -75,13 +75,14 @@ $city = $row['city'];
 $country = $row['country'];
 $username = $row['menteeId'];
 $photo = $row['picName'];
+$name = $row['menteeName']
 ?>
 
 var image<?php echo $username ?> = <?php echo "\"".$photo."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
-var name<?php echo $username ?> = <?php echo "\"".$menteeName."\""; ?>;
+var name<?php echo $username ?> = <?php echo "\"".$name."\""; ?>;
 var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
@@ -94,9 +95,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h2> Mentee name: " + name<?php echo $username ?> + "</h2> <h3> click here to go to the "
-<?php echo $username ?>
-    });
+    document.getElementById("other-stuff").innerHTML = "<h3> Mentee name: " + name<?php echo $username ?> + "</h3> <h3> click <a href=\"web_location<?php echo $username ?>here</a> to go to her project page!</h3>"    });
       }
     });
 <?php

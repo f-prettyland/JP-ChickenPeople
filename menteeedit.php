@@ -14,7 +14,6 @@
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
 
@@ -44,7 +43,7 @@
              $id = $_COOKIE[$cookie_name];
       }
 
-      //$id = $_POST['id'];
+      //$id = $_GET['id'];
       $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
       or die(mysql_error());  
 
@@ -53,23 +52,22 @@
       // Print out the contents of the entry 
 
       
-      $city= $_POST['city'];
-      $country= $_POST['country'];
-      $product= $_POST['product'];
-      $tag= $_POST['tag'];
-      $gmail= $_POST['gmail'];
-      $phone= $_POST['phone'];
-      $story = $_POST['story'];
+      $city= $_GET['city'];
+      $country= $_GET['country'];
+      $product= $_GET['product'];
+      $tag= $_GET['tag'];
+      $gmail= $_GET['gmail'];
+      $phone= $_GET['phone'];
+      $story = $_GET['story'];
 
       if($city != NULL){
-        var_dump($id);
-        mysql_query("UPDATE mentees SET city=$city WHERE menteeId=$id;");
-        #mysql_query("UPDATE mentees SET country=$country WHERE menteeId=$id;");
-        #mysql_query("UPDATE mentees SET product=$product WHERE menteeId=$id;");
-        #mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId=$id;");
-        #mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId=$id;");
-        #mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId=$id;");
-        #mysql_query("UPDATE mentees SET story=$story WHERE menteeId=$id;");
+        mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET gmail=$gmail WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET phone=$phone WHERE menteeId = $id;");
+        #mysql_query("UPDATE mentees SET story=$story WHERE menteeId = $id;");
       }
       
    
@@ -78,7 +76,7 @@
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-tarPOST="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -91,7 +89,7 @@
 
             <li><a href="./home.php">Home</a></li>
             <li ><a href="./login.php">Log In</a></li>
-            <li><form class="navbar-form navbar-right" action="searchresult.php" method="POST">
+            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
@@ -113,7 +111,7 @@
 </ul>
 </br>
 <div class="row">
-  <form method="post" action="menteeedit.php">
+  <form method="get" action="menteeedit.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
@@ -170,8 +168,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://POSTbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="http://POSTbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
