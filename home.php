@@ -95,7 +95,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h3> Mentee name: " + name<?php echo $username ?> + "</h3> <h3> click <a href=\"web_location<?php echo $username ?>here</a> to go to her project page!</h3>"    });
+    document.getElementById("other-stuff").innerHTML = "<h3> Mentee name: " + name<?php echo $username ?> + "</h3> <h3> <a href=\"web_location<?php echo $username ?>Click here</a> to go to her project page!</h3>"    });
       }
     });
 <?php
