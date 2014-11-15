@@ -69,7 +69,7 @@ if (!isset($_POST["submit_b"])){
       <form class=\"form-signin\" role=\"form\" action=".$_SERVER['PHP_SELF']." method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
         <input type=\"text\" id=\"username\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
-        <input type=\"password\" id=\"password\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\"required>
+        <input type=\"password\" id=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\"required>
         <div class=\"checkbox\">
           <label>
             <input type=\"checkbox\" value=\"remember-me\"> Remember me
@@ -89,10 +89,10 @@ if (!isset($_POST["submit_b"])){
     echo "Connected to MySQL<br>";
  
   $username = $_POST['username'];
-  $password = $_POST['password'];
+  $password__ = $_POST['password_'];
 
  
-  $result = mysql_query("SELECT * from users WHERE (userId = $username) && (password = $password)")
+  $result = mysql_query("SELECT * from users WHERE userId = $username AND password = $password__")
       or die(mysql_error());  
   if (!$result->num_rows == 1) {
     echo "<p>Invalid username/password combination</p>";
