@@ -43,7 +43,7 @@
       }
 
       //$id = $_GET['id'];
-      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;");
+      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
       or die(mysql_error());  
 
       // store the record of the "example" table into $row
