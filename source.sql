@@ -35,7 +35,7 @@ CREATE TABLE `timeline` (
   `id` int,
   `date` varchar(50),
   `title` varchar(50),
-  `description` varchar(50),
+  `description` varchar(1000),
   `photo1` varchar(50),
   `photo2` varchar(50),
   `photo3` varchar(50),
