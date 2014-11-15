@@ -90,7 +90,7 @@
 
   	<!-- PROFILE STUFF STARTS HERE-->
   	<div class="container">
-	
+	<div class="row clearfix">
 		<div class="col-md-2 column">
 			<h3>
         <?php $stringPic =  "\"./photos/".$row['picName']; 
@@ -111,7 +111,7 @@
              <p>Tags:<br /> <?php echo "".$row['tag']; ?></p>
 		</div>
 	</div>
-	
+	<div class="row clearfix">
 		<div class="col-md-2 column">
 		</div>
 		<div class="col-md-6 column">
@@ -125,7 +125,15 @@
 
       </div>
 
-    </div><!-- /.container --></div>
+    </div>
+
+    <script type="text/javascript">
+    	jQuery(document).ready(function ($) {
+        	$('#tabs').tab();
+    	});
+	</script> 
+
+    <!-- /.container --></div>
     <!-- PROFILE STUFF ENDS HERE-->
 
   	<div role="tabpanel" class="tab-pane fade" id="timeline">timeline</div>
