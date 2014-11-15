@@ -41,8 +41,8 @@
     $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
     or die(mysql_error());  
 
-    // $timelines = mysql_query("SELECT * FROM timeline where userId = $id ORDER BY `id` DESC;")
-    // or die(mysql_error());
+    $timelines = mysql_query("SELECT * FROM timeline where userId = $id ORDER BY `id` DESC;")
+    or die(mysql_error());
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
