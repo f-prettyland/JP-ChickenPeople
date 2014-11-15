@@ -102,6 +102,12 @@ if (!isset($_POST["submit_b"])){
 $cookie_name = "Auth";
 $cookie_value = $username;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' does not exist!";
+} else {
+    echo "Cookie is named: " . $cookie_name . "<br>Value is: " . $_COOKIE[$cookie_name];
+}
   }
 }
 ?>
