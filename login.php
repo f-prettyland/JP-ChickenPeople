@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="http://www.cherieblairfoundation.org/wp-content/uploads/2012/08/favicon-3.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Log In</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
 
             <li ><a href="./home.php">Home</a></li>
             <li class="active"><a href="./login.php">Log In</a></li>
-            <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
