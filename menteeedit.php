@@ -50,10 +50,10 @@
     $row = mysql_fetch_array( $result );
     // Print out the contents of the entry 
 
-    function modify($item){
-        $val = document.getElementById($item).value;
-        $result = mysql_query("UPDATE mentees SET $item=$val where menteeId = $id;");
-      }
+  
+    $val= $_GET['search'];
+    $result = mysql_query("UPDATE mentees SET $item=$val where menteeId = $id;");
+
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -101,31 +101,30 @@
             </div>
             <div class="panel-body">
              City:<br>
-              <input type="text" id="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning" onclick="modify(city)">Modify</button> 
+              <form>
+                <input type="text" id="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
               <br>
               Country:<br>
+       
               <input type="text" id="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning" action="">Modify</button> 
               <br>
               Product:<br>
+            
               <input type="text" id="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
               Tag:<br>
+         
               <input type="text" id="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
               Gmail:<br>
               <input type="text" id="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
               Phone Number:<br>
               <input type="text" id="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+               <br>
+               <button type="button" class="btn btn-sm btn-warning" action="updates.php" method="get">Submit Changes</button> 
               <br>
-              Do you want your contact details to remain private?<br>
-              <input type="checkbox" id="option3" value="Cheese">Protect my data<br> 
+            </form>
             </div>
           </div>
       </div>
@@ -135,7 +134,7 @@
               <h3 class="panel-title" >Your story</h3>
             </div>
             <div class="panel-body">
-              <textarea rows="15" cols="60" name="story">
+              <textarea rows="15" cols="60" id="story">
               <?php echo "\"".$row['story']."\""; ?></textarea>
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
             </div>
