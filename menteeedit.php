@@ -111,7 +111,7 @@
 </ul>
 </br>
 <div class="row">
-  <form method="get">
+  <form method="get" action="meteeedit.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
@@ -119,25 +119,25 @@
             </div>
             <div class="panel-body">
              City:<br>
-                <input type="text" id="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
+                <input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
               <br>
               Country:<br>
        
-              <input type="text" id="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
+              <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
               <br>
               Product:<br>
             
-              <input type="text" id="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
+              <input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
               <br>
               Tag:<br>
          
-              <input type="text" id="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
+              <input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
               <br>
               Gmail:<br>
-              <input type="text" id="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
+              <input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
               <br>
               Phone Number:<br>
-              <input type="text" id="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
+              <input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <br>
                <button type="submit" class="btn btn-warning">Submit Changes</button>
               <br>
@@ -151,7 +151,7 @@
               <h3 class="panel-title" >Your story</h3>
             </div>
             <div class="panel-body">
-              <textarea rows="15" cols="60" id="story">
+              <textarea rows="15" cols="60" name="story">
               <?php echo "\"".$row['story']."\""; ?></textarea>
             </div>
           </div>
