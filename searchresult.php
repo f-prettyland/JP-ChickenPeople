@@ -81,7 +81,7 @@
       echo "    <h4>";
       echo "      <center>";
       echo "        <h1 class=\"panel-title\" style=\"text-shadow:  1px 1px 1px #1C1C1C;\">";
-      echo "          <a href=\"./mentee.php?id=".$row['menteeId']."\"><img alt=\"140x140\" src=".$stringPic." class=\"img-rounded\" />";
+      echo "          <a href=\"./mentee.php?id=".$row['menteeId']."\"><img alt=\"140x140\" src=".$stringPic." class=\"img-rounded\" /></a>";
       echo "        </h1>";
       echo "      </center>";
       echo "    </h4>";
