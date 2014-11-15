@@ -62,41 +62,40 @@
 
 
 <?php
-if (!isset($_POST['submit'])){
+if (!isset($_POST["submit_b"])){
 
    echo "<div class=\"container\">
 
       <form class=\"form-signin\" role=\"form\" action=".$_SERVER['PHP_SELF']." method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
         <input type=\"text\" id=\"username\" class=\"form-control\" placeholder=\"Username\" method=\"post\" action=\"checklogin.php\" required autofocus>
-        <input type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\"required>
+        <input type=\"password\" id=\"password_\" class=\"form-control\" placeholder=\"Password\" method=\"post\" action=\"checklogin.php\" required>
         <div class=\"checkbox\">
           <label>
             <input type=\"checkbox\" value=\"remember-me\"> Remember me
           </label>
         </div>
-        <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
+        <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" name=\"submit_b\" id=\"submit_b\" value=\"Login\">Log in</button>
       </form>";}
 
-      else {
-
-      echo "<p> In submit! </p>";
+  else {
 
   require_once("db_const.php");
 
-    $dbhandle = mysql_connect(DB_HOST, DB_USER, DB_PASS) 
+    $hostname = "localhost";
+    $username = "root";
+    $password = "cfg2014!";
+
+    $dbhandle = mysql_connect($hostname, $username, $password) 
       or die("Unable to connect to MySQL");
 
     mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
  
   $username = $_POST['username'];
-  $password = $_POST['password'];
-
-  echo "<p>Got somewhere</p>";
-
+  $password__ = $_POST['password_'];
  
-  $result = mysql_query("SELECT * from users WHERE userId LIKE $username AND password LIKE $password LIMIT 1")
+  $result = mysql_query("SELECT * from users where userId = $username;")
       or die(mysql_error());  
   if (!$result->num_rows == 1) {
     echo "<p>Invalid username/password combination</p>";

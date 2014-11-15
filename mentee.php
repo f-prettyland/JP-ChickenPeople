@@ -75,6 +75,11 @@
     <div class="container">
 </br>
 </br>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Timeline</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
 </br>
 <div class="container">
 	<div class="row clearfix">
