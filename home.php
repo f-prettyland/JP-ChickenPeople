@@ -95,7 +95,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
+    document.getElementById("other-stuff").innerHTML = "<h3 style=\"colour:orange\"> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
       }
     });
 <?php
@@ -159,7 +159,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <p class="lead">Some text describing the project.</p>
       </div>
      <div id="other-stuff">
-      <h3></h3>
+      <h3><br></h3>
     </div>
     </div><!-- /.container -->
 
