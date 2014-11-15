@@ -17,6 +17,8 @@ CREATE TABLE `mentees` (
   PRIMARY KEY (`menteeId`)
 );
 
+DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `users` (
   `userId` varchar(100),
   `password` varchar(50),
