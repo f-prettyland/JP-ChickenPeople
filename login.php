@@ -101,7 +101,7 @@ if (!isset($_POST["submit_b"])){
     header("Location: ./login.php");
   } else {
     echo "<p>".$result.$result_array."</p>";
-    header("Location: ./mentee.php?id=".$username."");
+    #header("Location: ./mentee.php?id=".$username."");
       
 $cookie_name = "Auth";
 $cookie_value = $username;
