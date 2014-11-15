@@ -142,8 +142,14 @@
   		 <!-- TIMELINE STUFF STARTS HERE-->
 
   		  <div class="container">
-			
-</div>
+			<?php
+              while ($bro = mysql_fetch_array($timelines)) {
+                echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
+                echo "<p class=\"blog-post-meta\">".$bro['date']." by".$row['menteeName']"</p>";
+                echo "<p>".$bro['description']."</p>";
+          }
+      ?>
+        </div>
   		
 	 	 <!-- TIMELINE STUFF ENDS HERE-->
   	</div>
