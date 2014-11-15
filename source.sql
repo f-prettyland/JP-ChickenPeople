@@ -27,6 +27,8 @@ CREATE TABLE `users` (
 # empty the table
 DELETE FROM mentees;
 
+DELETE FROM users;
+
 # load new records into it
 LOAD DATA LOCAL INFILE 'menteeinfo.txt' INTO TABLE mentees;
 LOAD DATA LOCAL INFILE 'usersinfo.txt' INTO TABLE users;
