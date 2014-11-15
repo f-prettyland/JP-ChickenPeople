@@ -67,37 +67,37 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
       or die("Unable to connect to MySQL");
     mysql_select_db("data") or die(mysql_error());
 
-  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees;")
+  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees")
       or die(mysql_error()); 
+
   while(($row = mysql_fetch_assoc($result)) != NULL) {
 
-    echo "<p> Hello! </p>"
+$city = $row['city'];
+$country = $row['country'];
 
-    geocoder.geocode( { 'address': "".$row['city'].", ".$row['country'].""}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map,
-                #icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
+geocoder.geocode( { 'address': $city.", ".$country}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f43a-wolf%20face.png",
 
-                position: results[0].geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-        // Set the info window's content and position.
-        document.getElementById("other-stuff").innerHTML = "beep";
+            position: results[0].geometry.location
         });
-          }
-        });
+        google.maps.event.addListener(marker, 'click', function() {
+    // Set the info window's content and position.
+    document.getElementById("other-stuff").innerHTML = "beep";
+    });
+      }
+    });
 
-}
 
 }
 ?>
 
-
- infoWindow = new google.maps.InfoWindow();
-
 }
+
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -132,15 +132,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
           <ul class="nav navbar-nav">
             <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
-<<<<<<< HEAD
             <li class="active"><a href="./home.html">Home</a></li>
             <li><a href="./login.html">Log In</a></li>
             <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
-=======
-            <li class="active"><a href="./home.php">Home</a></li>
-            <li ><a href="./login.php">Log In</a></li>
-            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
->>>>>>> dd484aa4a55edf7a3d82c0d39c5ff3f417e41b67
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
