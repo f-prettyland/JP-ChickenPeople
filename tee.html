@@ -27,18 +27,13 @@
 
   <body>
     <?php
-    $servername = "local";
+    $hostname = "local";
     $username = "root";
     $password = "cfg2014!";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-    echo "Connected successfully";
+    $dbhandle = mysql_connect($hostname, $username, $password) 
+      or die("Unable to connect to MySQL");
+    echo "Connected to MySQL<br>";
     ?>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
