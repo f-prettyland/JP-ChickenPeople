@@ -49,7 +49,6 @@
     $bros = array();
     while($bro = mysql_fetch_array($timelines))
       $bros[] = $bro;
-    var_dump($bro);
     // Print out the contents of the entry 
 
     ?>
@@ -141,7 +140,9 @@
   		 <!-- TIMELINE STUFF STARTS HERE-->
 <?php
               foreach($bros as $bro){ 
-                var_dump($bro);
+                 echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
+                echo "<p class=\"blog-post-meta\">".$bro['date']." by".$row['menteeName']"</p>";
+                echo "<p>".$bro['description']."</p>";
               }
                 ?>
   		  <div class="container">
