@@ -41,8 +41,8 @@
     $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
     or die(mysql_error());  
 
-    $timelines = mysql_query("SELECT * FROM timeline where userId = $id ORDER BY `id` DESC;")
-    or die(mysql_error());
+    // $timelines = mysql_query("SELECT * FROM timeline where userId = $id ORDER BY `id` DESC;")
+    // or die(mysql_error());
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
@@ -142,13 +142,7 @@
   		 <!-- TIMELINE STUFF STARTS HERE-->
 
   		  <div class="container">
-			<?php
-           		while ($bro = mysql_fetch_array($timeline)) {
-            		echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
-		            echo "<p class=\"blog-post-meta\">".$bro['date']." by".$row['menteeName']"</p>";
-		            echo "<p>".$bro['description']."</p>";
-    			}
-			?>
+			
 </div>
   		
 	 	 <!-- TIMELINE STUFF ENDS HERE-->
