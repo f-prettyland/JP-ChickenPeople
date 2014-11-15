@@ -95,13 +95,12 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
-            icon: icon<?php echo $username ?> ,
 
             position: results[0].geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
+    document.getElementById("other-stuff").innerHTML = "<h3> <a href=\"./mentee.php?id=" + web_location<?php echo $username ?> +"\"><img alt=\"140x140\" src= \"./photos/" + image<?php echo $username ?>+"\" class=\"img-rounded\" /></a> <a href=\"" + web_location<?php echo $username ?> +"\">" + name<?php echo $username ?> + "</a></h3>"});
       }
     });
 <?php
