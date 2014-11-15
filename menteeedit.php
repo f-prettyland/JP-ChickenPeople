@@ -61,7 +61,7 @@
       $story = $_GET['story'];
 
       if($city != NULL){
-        mysql_query("UPDATE mentees SET city=$city WHERE menteeId = $id;");
+        mysql_query("UPDATE mentees SET city="aaa" WHERE menteeId = 0;");
         #mysql_query("UPDATE mentees SET country=$country WHERE menteeId = $id;");
         #mysql_query("UPDATE mentees SET product=$product WHERE menteeId = $id;");
         #mysql_query("UPDATE mentees SET tag=$tag WHERE menteeId = $id;");
