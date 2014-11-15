@@ -95,7 +95,7 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-  	<div role="tabpanel" class="tab-pane fade" id="profile">
+  	<div role="tabpanel" class="tab-pane fade active" id="profile">
 
   	<!-- PROFILE STUFF STARTS HERE-->
   	<div class="container">
