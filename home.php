@@ -58,24 +58,8 @@ mapTypeControl: false,
 
 map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 
-<?php
 
-    $hostname = "localhost";
-    $username = "root";
-    $password_serv = "cfg2014!";
-    $dbhandle = mysql_connect($hostname, $username, $password_serv) 
-      or die("Unable to connect to MySQL");
-    mysql_select_db("data") or die(mysql_error());
-
-  $result = mysql_query("SELECT menteeId, menteeName, city, country, product, tag from mentees")
-      or die(mysql_error()); 
-
-  while(($row = mysql_fetch_assoc($result)) != NULL) {
-
-$city = $row['city'];
-$country = $row['country'];
-
-geocoder.geocode( { 'address': $city.", ".$country}, function(results, status) {
+geocoder.geocode( { 'address': "London, UK"}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
@@ -91,13 +75,22 @@ geocoder.geocode( { 'address': $city.", ".$country}, function(results, status) {
       }
     });
 
+    
+
+
+  var marker2 = new google.maps.Marker({
+    position: new google.maps.LatLng(-25.363882, 0.044922),
+    icon: "http://www.geekchamp.com/upload/symbolicons/animals/1f434-horse%20face.png",
+    map: map
+  });
+    google.maps.event.addListener(marker2, 'click', function() {
+    // Set the info window's content and position.
+    document.getElementById("other-stuff").innerHTML = "boop";
+    });
+
+ infoWindow = new google.maps.InfoWindow();
 
 }
-?>
-
-}
-
-
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
