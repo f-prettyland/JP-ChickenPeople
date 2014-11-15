@@ -76,7 +76,7 @@ if (!isset($_POST['submit'])){
           </label>
         </div>
         <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
-      </form>";
+      </form>";}
 
       else {
 
