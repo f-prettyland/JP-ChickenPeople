@@ -43,15 +43,17 @@
     }
 
     //$id = $_GET['id'];
-    $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
+    $result = mysql_query("SELECT * FROM mentees where menteeId = $id;");
     or die(mysql_error());  
-
-   
 
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
     // Print out the contents of the entry 
 
+    function modify($item){
+        $val = document.getElementById($item).value;
+        $result = mysql_query("UPDATE mentees SET $item=$val where menteeId = $id;");
+      }
     ?>
 
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -70,7 +72,7 @@
 
             <li><a href="./home.php">Home</a></li>
             <li ><a href="./login.php">Log In</a></li>
-            <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
@@ -99,31 +101,31 @@
             </div>
             <div class="panel-body">
              City:<br>
-              <input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+              <input type="text" id="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning" onclick="modify(city)">Modify</button> 
               <br>
               Country:<br>
-              <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
-               <button type="button" class="btn btn-sm btn-warning">Modify</button> 
+              <input type="text" id="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning" action="">Modify</button> 
               <br>
               Product:<br>
-              <input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
+              <input type="text" id="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
               Tag:<br>
-              <input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
+              <input type="text" id="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
               Gmail:<br>
-              <input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
+              <input type="text" id="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
               Phone Number:<br>
-              <input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
+              <input type="text" id="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
                <button type="button" class="btn btn-sm btn-warning">Modify</button> 
               <br>
               Do you want your contact details to remain private?<br>
-              <input type="checkbox" name="option3" value="Cheese">Protect my data<br> 
+              <input type="checkbox" id="option3" value="Cheese">Protect my data<br> 
             </div>
           </div>
       </div>
