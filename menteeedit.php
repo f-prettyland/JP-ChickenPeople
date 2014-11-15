@@ -84,58 +84,57 @@
 
 <div class="row">
         <div class="col-sm-6">
-          <div class="panel panel-default">
+          <div class="panel panel-default" style="background-color:#F5DA81">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">Your details</h3>
             </div>
             <div class="panel-body">
-              Panel content
+             City:<br>
+              <input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Submit</button> 
+              <br>
+              Country:<br>
+              <input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Submit</button> 
+              <br>
+              Product:<br>
+              <input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Submit</button> 
+              <br>
+              Tag:<br>
+              <input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Submit</button> 
+              <br>
+              Gmail:<br>
+              <input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Submit</button> 
+              <br>
+              Phone Number:<br>
+              <input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
+               <button type="button" class="btn btn-sm btn-warning">Submit</button> 
+              <br>
+              Do you want your contact details to remain private?<br>
+              <input type="checkbox" name="option3" value="Cheese"> Protext my data<br> 
             </div>
           </div>
       </div>
       <div class="col-sm-6">
-          <div class="panel panel-default">
+          <div class="panel panel-default" style="background-color:#F5DA81">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">Your story</h3>
             </div>
             <div class="panel-body">
-              Panel content
+                            
+              Story<br>
+              <textarea rows="10" cols="100" name="story">
+              <?php echo "\"".$row['story']."\""; ?></textarea>
+               <button type="button" class="btn btn-sm btn-warning">Submit</button> 
             </div>
           </div>
       </div>
     </div>
 
-City:<br>
-<input type="text" name="city" value =<?php echo "\"".$row['city']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Country:<br>
-<input type="text" name="country" value=<?php echo "\"".$row['country']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Product:<br>
-<input type="text" name="product" value=<?php echo "\"".$row['product']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Tag:<br>
-<input type="text" name="tag" value=<?php echo "\"".$row['tag']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Gmail:<br>
-<input type="text" name="gmail" value=<?php echo "\"".$row['gmail']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Phone Number:<br>
-<input type="text" name="phone" value=<?php echo "\"".$row['phone']."\""; ?> size="25">
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-<br>
-Do you want your contact details to remain private?<br>
-<input type="checkbox" name="option3" value="Cheese"> Protext my data<br> 
-Story<br>
-<textarea rows="10" cols="100" name="story">
-<?php echo "\"".$row['story']."\""; ?></textarea>
- <button type="button" class="btn btn-sm btn-warning">Submit</button> 
-</div><!-- /.container -->
+
 
 
     <!-- Bootstrap core JavaScript
