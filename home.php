@@ -158,10 +158,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <h1>Empowering women, creating connections</h1>
         <p class="lead">Some text describing the project.</p>
       </div>
-    </div><!-- /.container -->
-   
-    <div id="other-stuff">
+     <div id="other-stuff">
+      <h3></h3>
     </div>
+    </div><!-- /.container -->
 
       <div id="map-canvas"></div>
 
