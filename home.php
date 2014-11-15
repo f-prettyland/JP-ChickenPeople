@@ -17,24 +17,7 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
- <?php
-    $hostname = "localhost";
-    $username = "root";
-    $password = "cfg2014!";
-
-    $dbhandle = mysql_connect($hostname, $username, $password) 
-      or die("Unable to connect to MySQL");
-    mysql_select_db("data") or die(mysql_error());
-    echo "Connected to MySQL<br>";
-    $id = $_GET['id'];
-    $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
-    or die(mysql_error());  
-
-    // store the record of the "example" table into $row
-    $row = mysql_fetch_array( $result );
-    // Print out the contents of the entry 
-
-    ?>
+ 
     <script>
 // This example uses SVG path notation to add a vector-based symbol
 // as the icon for a marker. The resulting icon is a star-shaped symbol
@@ -146,12 +129,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
             <li class="active"><a href="./home.html">Home</a></li>
             <li><a href="./login.html">Log In</a></li>
-            <li><form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="search" class="form-control">
+            <li>
+            <form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <div class="form-group" >
+              <input type="text" placeholder="search" name="search">
             </div>
-            <button type="submit"class="btn btn-warning">Search</button>
-          </form></li>
+            <button type="submit" class="btn btn-warning">Search</button>
+          </form>
+        </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
