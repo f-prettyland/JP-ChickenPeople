@@ -81,7 +81,7 @@ var image<?php echo $username ?> = <?php echo "\"".$photo."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
-var location = "Location: ./mentee.php?id=" + mentee;
+var location<?php echo $username ?> = "Location: ./mentee.php?id=" + mentee;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
@@ -93,7 +93,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    header(location);
+    header("Location: " + location<?php echo $username ?>);
     });
       }
     });
