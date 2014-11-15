@@ -15,9 +15,10 @@
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/blog/blog.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+    
 
 
 
