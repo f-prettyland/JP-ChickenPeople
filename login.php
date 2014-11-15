@@ -100,6 +100,9 @@ if (!isset($_POST["submit_b"])){
     echo "<p>".$result.$result_array."</p>";
       
 $cookie_name = "Auth";
+unset($_COOKIE[$cookie_name]);
+$res = setcookie($cookie_name, '', time() - 3600);
+
 $cookie_value = $username;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
