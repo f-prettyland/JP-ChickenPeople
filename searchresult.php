@@ -54,7 +54,16 @@
             <li><img alt="Brand" src="http://www.cherieblairfoundation.org/wp-content/uploads/2012/07/CBFW_LogoWeb.png" width="155"></li>
 
             <li><a href="./home.php">Home</a></li>
-            <li ><a href="./login.php">Log In</a></li>
+
+    <?php
+        if(!isset($_COOKIE[$cookie_name])) {
+          <li ><a href="./login.php">Log In</a></li>
+        }
+        else{
+          <li ><a href="./logout.php">Logout In</a></li>
+        }
+      ?>
+            
             <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">

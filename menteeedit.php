@@ -44,6 +44,16 @@
       }
 
 
+  
+      //$id = $_GET['id'];
+      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
+      or die(mysql_error());  
+
+      // store the record of the "example" table into $row
+      $row = mysql_fetch_array( $result );
+      // Print out the contents of the entry 
+
+
       $city= $_POST['city'];
       $country= $_POST['country'];
       $product= $_POST['product'];
@@ -59,15 +69,6 @@
       mysql_query("UPDATE mentees SET gmail='".$gmail."' WHERE menteeId = '".$id."';");
       mysql_query("UPDATE mentees SET phone='".$phone."' WHERE menteeId = '".$id."';");
       mysql_query("UPDATE mentees SET story='".$story."' WHERE menteeId = '".$id."';");
-
-
-      //$id = $_GET['id'];
-      $result = mysql_query("SELECT * FROM mentees where menteeId = $id;")
-      or die(mysql_error());  
-
-      // store the record of the "example" table into $row
-      $row = mysql_fetch_array( $result );
-      // Print out the contents of the entry 
 
     ?>
 
