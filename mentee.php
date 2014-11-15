@@ -80,8 +80,8 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Settings</a></li>
+    <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Timeline</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -90,7 +90,7 @@
 
   	<!-- PROFILE STUFF STARTS HERE-->
   	<div class="container">
-	<div class="row clearfix">
+	
 		<div class="col-md-2 column">
 			<h3>
         <?php $stringPic =  "\"./photos/".$row['picName']; 
@@ -111,7 +111,7 @@
              <p>Tags:<br /> <?php echo "".$row['tag']; ?></p>
 		</div>
 	</div>
-	<div class="row clearfix">
+	
 		<div class="col-md-2 column">
 		</div>
 		<div class="col-md-6 column">
