@@ -100,7 +100,6 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
 <?php
 }
 ?>
-    map.setCenter(0,0);
 
 }
 
@@ -159,9 +158,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <p class="lead">Some text describing the project.</p>
       </div>
     </div><!-- /.container -->
+   
+    <div>
+      <h2> id="other-stuff"> </h2>
+      <br>    <div id="other-stuff"></div>
+    </div>
 
       <div id="map-canvas"></div>
-    <div id="other-stuff"></div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
