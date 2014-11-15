@@ -73,11 +73,14 @@ map.mapTypes.set(layer, new google.maps.StamenMapType(layer));
 
 $city = $row['city'];
 $country = $row['country'];
+$username = $row['menteeId'];
 ?>
 
 var image = <?php echo "\"./photos/".$row['picName']."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
+var mentee = <?php echo "\"".$username."\""; ?>;
+var location = "Location: ./mentee.php?id=" + mentee;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
@@ -89,7 +92,7 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = "";
+    header(location);
     });
       }
     });
