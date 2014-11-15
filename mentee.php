@@ -86,15 +86,15 @@
 			</h3>
 		</div>
 		<div class="col-md-6 column">
-            <h3><?php echo .$row['product']; ?></h3>
+            <h3><?php echo "".$row['product']; ?></h3>
 			<p>
-				<?php echo .$row['story']; ?>
+				<?php echo "".$row['story']; ?>
 			</p>
 		</div>
 		<div class="col-md-4 column">
-			 <address> <strong>Contact Info.</strong><br /> <?php echo .$row['city']; ?><br /> <?php echo .$row['country']; ?></address>
+			 <address> <strong>Contact Info.</strong><br /> <?php echo "".$row['city']; ?><br /> <?php echo "".$row['country']; ?></address>
 
-             <p>Tags:<br /> <?php echo .$row['tag']; ?></p>
+             <p>Tags:<br /> <?php echo "".$row['tag']; ?></p>
 		</div>
 	</div>
 	<div class="row clearfix">
