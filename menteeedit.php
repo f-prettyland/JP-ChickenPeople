@@ -152,8 +152,7 @@
               <h3 class="panel-title" >Your story</h3>
             </div>
             <div class="panel-body">
-              <textarea rows="15" cols="60" name="story">
-              <?php echo $row['story']; ?></textarea>
+              <textarea rows="15" cols="60" name="story"><?php echo $row['story']; ?></textarea>
             </div>
           </div>
       </div>
