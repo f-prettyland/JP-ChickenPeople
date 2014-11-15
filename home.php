@@ -87,7 +87,7 @@ var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
 
 var icon<?php echo $username ?> = new google.maps.MarkerImage(
             "./photos/" + image<?php echo $username ?>, //url
-            new google.maps.Size(40, 40), //size 
+            new google.maps.Size(40, 40) //size 
     );
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
