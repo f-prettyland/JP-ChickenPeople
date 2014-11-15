@@ -92,9 +92,9 @@ if (!isset($_POST["submit_b"])){
 
   echo $username;
   echo $password;
-  echo sizeof(mysql_fetch_array(users));
+  echo sizeof(users);
 
-  $result = mysql_query("SELECT * from users where userId = $username and password = $password limit 1, sizeof(mysql_fetch_array(users));")
+  $result = mysql_query("SELECT * from users where userId = $username and password = $password limit 1;")
       or die(mysql_error()); 
   $result_array = mysql_fetch_array($result);
   if (sizeof($result_array) != 1) {
