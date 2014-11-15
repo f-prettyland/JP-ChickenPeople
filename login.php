@@ -80,8 +80,6 @@ if (!isset($_POST["submit_b"])){
 
   else {
 
-  require_once("db_const.php");
-
     $hostname = "localhost";
     $username = "root";
     $password = "cfg2014!";
@@ -92,12 +90,13 @@ if (!isset($_POST["submit_b"])){
     mysql_select_db("data") or die(mysql_error());
     echo "Connected to MySQL<br>";
  
-  $username = $_POST['username'];
-  $password__ = $_POST['password_'];
+  $username = $_POST["username"];
+  $password__ = $_POST["password_"];
  
   $result = mysql_query("SELECT * from users where userId = $username;")
-      or die(mysql_error());  
-  if (!$result->num_rows == 1) {
+      or die(mysql_error()); 
+  $result_array = mysql_fetch_array($result);
+  if (sizeof($result_array) != 1) {
     echo "<p>Invalid username/password combination</p>";
   } else {
     echo "<p>Logged in successfully</p>";
