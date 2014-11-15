@@ -49,6 +49,28 @@
       // store the record of the "example" table into $row
       $row = mysql_fetch_array( $result );
       // Print out the contents of the entry 
+
+
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $city= $_GET['city'];
+          $country= $_GET['country'];
+          $product= $_GET['product'];
+          $tag= $_GET['tag'];
+          $gmail= $_GET['gmail'];
+          $phone= $_GET['phone'];
+          $story = $_GET['story'];
+
+
+          $result = mysql_query("UPDATE mentees SET city=$city where menteeId = $id;");
+          $result = mysql_query("UPDATE mentees SET country=$country where menteeId = $id;");
+          $result = mysql_query("UPDATE mentees SET product=$product where menteeId = $id;");
+          $result = mysql_query("UPDATE mentees SET tag=$tag where menteeId = $id;");
+          $result = mysql_query("UPDATE mentees SET gmail=$gmail where menteeId = $id;");
+          $result = mysql_query("UPDATE mentees SET phone=$phone where menteeId = $id;");
+          $result = mysql_query("UPDATE mentees SET story=$story where menteeId = $id;");
+
+      }
+
    
     ?>
 
@@ -88,9 +110,8 @@
   <li role="presentation"><a href="#">Messages</a></li>
 </ul>
 </br>
-</div>
 <div class="row">
-  <form form action="updates.php">
+  <form form method="post">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
@@ -136,6 +157,7 @@
           </div>
       </div>
         </form>
+    </div>
     </div>
 
 
