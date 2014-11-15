@@ -47,6 +47,7 @@
     // store the record of the "example" table into $row
     $row = mysql_fetch_array( $result );
     $bro = mysql_fetch_array( $timelines );
+    var_dump($bro);
     // Print out the contents of the entry 
 
     ?>
@@ -138,11 +139,7 @@
   		 <!-- TIMELINE STUFF STARTS HERE-->
 
   		  <div class="container">
-			<?php
-                echo "<h2 class=\"blog-post-title\">".$bro['title']."</h2>";
-                echo "<p class=\"blog-post-meta\">".$bro['date']." by".$row['menteeName']"</p>";
-                echo "<p>".$bro['description']."</p>";
-      ?>
+
         </div>
   		
 	 	 <!-- TIMELINE STUFF ENDS HERE-->
