@@ -79,6 +79,9 @@ if (!isset($_POST['submit'])){
         </div>
         <button class=\"btn btn-lg btn-warning btn-block\" type=\"submit\" value=\"Login\">Log in</button>
       </form>"
+
+        echo "<p>Got somewhere</p>";
+
 } else {
 
   require_once("db_const.php");
