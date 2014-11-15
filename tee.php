@@ -27,7 +27,7 @@
 
   <body>
     <?php
-    $hostname = "local";
+    $hostname = "localhost";
     $username = "root";
     $password = "cfg2014!";
 
