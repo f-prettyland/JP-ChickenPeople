@@ -84,8 +84,8 @@
 
 <div class="row">
         <div class="col-sm-6">
-          <div class="panel panel-default" style="background-color:#F5DA81">
-            <div class="panel-heading">
+          <div class="panel panel-default">
+            <div class="panel-heading" style="background-color:#F5DA81">
               <h3 class="panel-title">Your details</h3>
             </div>
             <div class="panel-body">
@@ -119,14 +119,14 @@
           </div>
       </div>
       <div class="col-sm-6">
-          <div class="panel panel-default" style="background-color:#F5DA81">
-            <div class="panel-heading">
+          <div class="panel panel-default">
+            <div class="panel-heading" style="background-color:#F5DA81">
               <h3 class="panel-title">Your story</h3>
             </div>
             <div class="panel-body">
                             
               Story<br>
-              <textarea rows="10" cols="100" name="story">
+              <textarea rows="10" cols="55" name="story">
               <?php echo "\"".$row['story']."\""; ?></textarea>
                <button type="button" class="btn btn-sm btn-warning">Submit</button> 
             </div>
