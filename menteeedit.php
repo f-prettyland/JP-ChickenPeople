@@ -83,7 +83,7 @@
 </br>
 
 <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
@@ -93,7 +93,7 @@
             </div>
           </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
