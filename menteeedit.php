@@ -113,7 +113,7 @@
 </ul>
 </br>
 <div class="row">
-  <form method="get">
+  <form method="get" action="menteeedit.php">
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading" style="background-color:#F5DA81">
