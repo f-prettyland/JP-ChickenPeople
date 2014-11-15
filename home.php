@@ -81,7 +81,8 @@ var image<?php echo $username ?> = <?php echo "\"".$photo."\""; ?>;
 var city_name = <?php echo "\"".$city."\""; ?>;
 var country_name = <?php echo "\"".$country."\""; ?>;
 var mentee = <?php echo "\"".$username."\""; ?>;
-var location<?php echo $username ?> = "Location: ./mentee.php?id=" + mentee;
+var name<?php echo $username ?> = <?php echo "\"".$menteeName."\""; ?>;
+var web_location<?php echo $username ?> = "./mentee.php?id=" + mentee;
 
 geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
@@ -93,7 +94,8 @@ geocoder.geocode({ 'address': city_name + ", " + country_name}, function(results
         });
         google.maps.event.addListener(marker, 'click', function() {
     // Set the info window's content and position.
-    document.getElementById("other-stuff").innerHTML = location<?php echo $username ?>;
+    document.getElementById("other-stuff").innerHTML = "<h2> Mentee name: " + name<?php echo $username ?> + "</h2> <h3> click here to go to the "
+<?php echo $username ?>
     });
       }
     });
@@ -140,7 +142,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
             <li class="active"><a href="./home.php">Home</a></li>
             <li><a href="./login.php">Log In</a></li>
-            <li><form class="navbar-form navbar-right" action="searchresults.php" method="get">
+            <li><form class="navbar-form navbar-right" action="searchresult.php" method="get">
             <div class="form-group" >
               <input type="text" placeholder="Search" name="search">
             </div>
@@ -159,9 +161,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       </div>
     </div><!-- /.container -->
    
-    <div>
-      <h2> id="other-stuff"> </h2>
-      <br>    <div id="other-stuff"></div>
+    <div id="other-stuff">
     </div>
 
       <div id="map-canvas"></div>
